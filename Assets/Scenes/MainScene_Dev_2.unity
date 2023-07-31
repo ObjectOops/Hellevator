@@ -1671,8 +1671,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.652, y: -0.366}
-  m_SizeDelta: {x: 0.7024, y: 0.3082}
+  m_AnchoredPosition: {x: 1.6803, y: -0.366}
+  m_SizeDelta: {x: 0.7589, y: 0.3082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206066320
 MonoBehaviour:
@@ -1696,8 +1696,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Trust: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 87bfa38c10b2fd247b31e8efd09af480, type: 2}
+  m_sharedMaterial: {fileID: -5179485255702834747, guid: 87bfa38c10b2fd247b31e8efd09af480, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1786,7 +1786,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -5179485255702834747, guid: 87bfa38c10b2fd247b31e8efd09af480, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2774,8 +2774,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Day: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 87bfa38c10b2fd247b31e8efd09af480, type: 2}
+  m_sharedMaterial: {fileID: -5179485255702834747, guid: 87bfa38c10b2fd247b31e8efd09af480, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2864,7 +2864,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -5179485255702834747, guid: 87bfa38c10b2fd247b31e8efd09af480, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
