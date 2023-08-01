@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1811364f92838c14faa5672b484d3736
+guid: e4585770a01ff4e4bb149431113cef07
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,8 +10,7 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - PixelFontFinal
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: b0181f60d97d40241b53713d13e2121b, type: 3}
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
