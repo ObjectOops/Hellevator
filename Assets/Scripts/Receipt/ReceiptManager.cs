@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneManager : MonoBehaviour
+public class ReceiptManager : MonoBehaviour
 {
-    public static SceneManager instance;
+    public static ReceiptManager instance;
 
     private void Start()
     {
@@ -13,7 +13,7 @@ public class SceneManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-	{
-		
-	}
+    {
+        
+    }
 }
