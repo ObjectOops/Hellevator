@@ -15,4 +15,8 @@ public class Button : MonoBehaviour
     {
         
     }
+    public void OnMouseDown()
+    {
+        Debug.Log("yes");
+    }
 }
