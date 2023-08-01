@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static UIManager instance;
+
+    private void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame

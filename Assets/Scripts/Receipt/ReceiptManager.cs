@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ReceiptManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static ReceiptManager instance;
+
+    private void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
