@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    //public Animator animator;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {   
@@ -18,6 +18,6 @@ public class Button : MonoBehaviour
     public void OnMouseDown()
     {
         Debug.Log("yes");
-        //animator.SetBool("ElevatorOpen", true);
+        animator.SetBool("ElevatorOpen", true);
     }
 }
