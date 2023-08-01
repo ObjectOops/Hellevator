@@ -19,7 +19,7 @@ public class Button : MonoBehaviour
 		if (!levelSelected)
 		{
 			buttonAnimator.Press();
-			// receiptManager.instance.activeReceipt.judge(this.name);
+			ReceiptManager.instance.activeReceipt.Judge(this.name);
 			levelSelected = true;
 		}
 	}

@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Receipt : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+	ReceiptAnimator receiptAnimator;
+
+	public string crimes;
+	public int level;
+
+	private void Start()
+	{
+		receiptAnimator = GetComponent<ReceiptAnimator>();
+	}
+
+	public void PrintSequence()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+	public void Judge(string buttonNameRaw)
     {
-        
+
     }
 }
