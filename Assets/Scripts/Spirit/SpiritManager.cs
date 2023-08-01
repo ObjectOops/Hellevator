@@ -20,10 +20,17 @@ public class SpiritManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(gameManager == null)
+        {
+            gameManager = GameManager.instance;
+        }
     }
     public bool GenerateSpirit()
     {
+        if(gameManager == null)
+        {
+            Debug.Log("Damn");
+        }
         if(gameManager.spiritNum == 4)
         {
             gameManager.spiritNum = 5;
@@ -32,6 +39,7 @@ public class SpiritManager : MonoBehaviour
         }
         else
         {
+            gameManager.spiritNum++;
             GameObject currentSpirit = Instantiate(objectSpirit);
             return false;
         }
