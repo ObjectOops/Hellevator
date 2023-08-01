@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class ReceiptManager : MonoBehaviour
 {
-    public static ReceiptManager instance;
+	public static ReceiptManager instance;
 
-    private void Start()
+	[SerializeField] private GameObject receiptPrefab;
+	[SerializeField] private List<Crime> crimes;
+	[SerializeField] private GameObject receiptSpawn;
+
+	public Receipt activeReceipt;
+
+	private void Start()
+	{
+		instance = this;
+	}
+
+	public void GenerateReceipt()
     {
-        instance = this;
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	[System.Serializable] private struct Crime
+	{
+		public string crime;
+		public int level;
+	}
 }

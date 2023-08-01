@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class ButtonAnimator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	private Animator animator;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private void Start()
+	{
+		animator = GetComponent<Animator>();
+	}
+
+	public void Press()
+	{
+		animator.SetTrigger("press");
+	}
+
+	[ContextMenu("Unpress")]
+	public void Unpress()
+	{
+		animator.SetTrigger("unpress");
+	}
 }

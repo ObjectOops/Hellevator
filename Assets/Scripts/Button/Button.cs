@@ -1,23 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Button : MonoBehaviour
 {
-    public Animator animator;
-    // Start is called before the first frame update
-    void Start()
-    {   
-    }
+	public static bool levelSelected = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void OnMouseDown()
-    {
-        Debug.Log("yes");
-        animator.SetBool("ElevatorOpen", true);
-    }
+	private ButtonAnimator buttonAnimator;
+
+	private void Start()
+	{
+		buttonAnimator = GetComponent<ButtonAnimator>();
+	}
+
+	public void OnMouseDown()
+	{
+		if (!levelSelected)
+		{
+			buttonAnimator.Press();
+			// receiptManager.instance.activeReceipt.judge(this.name);
+			levelSelected = true;
+		}
+	}
 }
