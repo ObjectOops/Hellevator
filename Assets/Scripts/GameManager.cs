@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
 	{
 		instance = this;
 		// Initialize UI.
+		Debug.Log("what");
 		StartCoroutine(NextSpirit());
+		Debug.Log("what2");
 	}
 
 	public IEnumerator NextDay()

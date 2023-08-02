@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a9143a2ee75f24b9446514bbcbc459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonNameStart: 
+  buttonNameStart: Button
   trustGain: 100
   trustLose: 100
   finePrint: 

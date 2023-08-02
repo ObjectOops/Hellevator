@@ -6,8 +6,8 @@ public class SpiritManager : MonoBehaviour
 {
 	public static SpiritManager instance;
 
-	[SerializeField] private Spirit spiritPrefab;
-	[SerializeField] private List<List<Trait>> traits;
+	[SerializeField] private GameObject spiritPrefab;
+	[SerializeField] private List<Trait> traits;
 	public List<Transform> movementPoints;
 
 	[HideInInspector] public Spirit activeSpirit;
@@ -20,8 +20,9 @@ public class SpiritManager : MonoBehaviour
 	public IEnumerator GenerateSpirit(int day, int index)
 	{
 		// `day` starts from 1.
-		Trait trait = traits[day - 1][index];
-		Spirit spirit = Instantiate(spiritPrefab);
+		Trait trait = traits[(day - 1) * GameManager.instance.limit + index];
+		GameObject spiritObject = Instantiate(spiritPrefab);
+		Spirit spirit = spiritObject.GetComponent<Spirit>();
 		TransferTransform(spirit, movementPoints[0]); // Move to spawn point.
 		spirit.GetComponent<SpriteRenderer>().sprite = trait.sprite;
 		spirit.realName = trait.realName;

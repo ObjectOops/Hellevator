@@ -46,5 +46,16 @@ public class ElevatorAnimator : MonoBehaviour
 				new Vector2(Random.Range(0, cameraShake), Random.Range(0, cameraShake));
 			yield return new WaitForSeconds(cameraShakeDelay);
         }
+		camera.transform.position = cameraPosOriginal;
+    }
+
+	public void Closed()
+    {
+		opened = false;
+    }
+
+	public void Opened()
+    {
+		opened = true;
     }
 }

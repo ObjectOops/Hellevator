@@ -6,7 +6,7 @@ public class ReceiptManager : MonoBehaviour
 {
 	public static ReceiptManager instance;
 
-	[SerializeField] private Receipt receiptPrefab;
+	[SerializeField] private GameObject receiptPrefab;
 	[SerializeField] private Transform receiptSpawn;
 	[SerializeField] private List<CrimeCategory> crimeCategories;
 
@@ -27,7 +27,8 @@ public class ReceiptManager : MonoBehaviour
 
 	public void GenerateReceipt(bool isBoss)
 	{
-		Receipt receipt = Instantiate(receiptPrefab);
+		GameObject receiptObject = Instantiate(receiptPrefab);
+		Receipt receipt = receiptObject.GetComponent<Receipt>();
 		receipt.transform.SetPositionAndRotation(receiptSpawn.position, receiptSpawn.rotation);
 		receipt.transform.localScale = receiptSpawn.localScale;
 
