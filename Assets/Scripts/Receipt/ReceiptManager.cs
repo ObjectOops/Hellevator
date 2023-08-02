@@ -7,10 +7,11 @@ public class ReceiptManager : MonoBehaviour
 	public static ReceiptManager instance;
 
 	[SerializeField] private Receipt receiptPrefab;
-	[SerializeField] private GameObject receiptSpawn;
+	[SerializeField] private Transform receiptSpawn;
 	[SerializeField] private List<CrimeCategory> crimeCategories;
+	[SerializeField] private int receiptCharacterLengthMax;
 
-	public Receipt activeReceipt;
+	[HideInInspector] public Receipt activeReceipt;
 
 	private void Start()
 	{
@@ -25,6 +26,11 @@ public class ReceiptManager : MonoBehaviour
 	public void GenerateReceipt(bool isBoss)
 	{
 		Receipt receipt = Instantiate(receiptPrefab);
+		receipt.transform.position = receiptSpawn.position;
+		receipt.transform.rotation = receiptSpawn.rotation;
+		receipt.transform.localScale = receiptSpawn.localScale;
+
+		// [1, 10) --> for each of the nine levels.
 		int rand1 = Random.Range(1, 10), rand2 = Random.Range(1, 10);
 		while (rand1 == rand2)
 		{
@@ -51,14 +57,33 @@ public class ReceiptManager : MonoBehaviour
 			crimesCommitted[i] = swap;
 		}
 
+		receipt.finePrint += 
+$@"{BreakString(SpiritManager.instance.activeSpirit.realName)}
+> {BreakString(SpiritManager.instance.activeSpirit.description)}
+> {BreakString(SpiritManager.instance.activeSpirit.demise)}
+---------------------";
 		foreach (string crime in crimesCommitted)
 		{
-			receipt.crimes += crime + '\n';
+			receipt.finePrint += $"\n{BreakString(crime)}";
 		}
 		receipt.level = majorLevel.level;
 
 		activeReceipt = receipt;
 		receipt.PrintSequence();
+	}
+
+	private string BreakString(string str)
+    {
+		string result = "";
+		for (int i = 0; i < str.Length; ++i)
+		{
+			result += str[i];
+			if (i % receiptCharacterLengthMax == 0)
+			{
+				result += '\n';
+			}
+		}
+		return result;
 	}
 
 	[System.Serializable] private struct CrimeCategory

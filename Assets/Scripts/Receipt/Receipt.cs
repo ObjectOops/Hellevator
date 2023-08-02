@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Receipt : MonoBehaviour
 {
-	ReceiptAnimator receiptAnimator;
+	[SerializeField] private string buttonNameStart;
+	[SerializeField] private int trustGain, trustLose;
 
-	public string crimes;
-	public int level;
+	private ReceiptAnimator receiptAnimator;
+
+	[HideInInspector] public string finePrint;
+	[HideInInspector] public int level;
 
 	private void Start()
 	{
@@ -15,12 +18,17 @@ public class Receipt : MonoBehaviour
 	}
 
 	public void PrintSequence()
-    {
+	{
+		receiptAnimator.Print(finePrint);
+	}
 
-    }
-
-	public void Judge(string buttonNameRaw)
-    {
-
-    }
+	public void Judge(Button button)
+	{
+		receiptAnimator.Discard();
+		bool correct = $"{buttonNameStart}_{level}" == button.name;
+/*		SpiritManager.instance.activeSpirit.JudgementSequence(correct);
+		SpiritManager.instance.activeSpirit.DepartureSequence();
+		GameManager.instance.SetTrust(GameManager.instance.trust + (correct ? trustGain : trustLose))
+		GameManager.instance.NextSpirit();
+*/	}
 }
