@@ -6,6 +6,7 @@ public class ReceiptManager : MonoBehaviour
 {
 	public static ReceiptManager instance;
 
+	//The receipt
 	[SerializeField] private Receipt receiptPrefab;
 	[SerializeField] private Transform receiptSpawn;
 	[SerializeField] private List<CrimeCategory> crimeCategories;
@@ -56,7 +57,7 @@ public class ReceiptManager : MonoBehaviour
 			crimesCommitted[swapIndex] = crimesCommitted[i];
 			crimesCommitted[i] = swap;
 		}
-
+		
 		receipt.finePrint += 
 $@"{BreakString(SpiritManager.instance.activeSpirit.realName)}
 > {BreakString(SpiritManager.instance.activeSpirit.description)}

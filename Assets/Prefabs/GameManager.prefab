@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4656188047972473952}
   - component: {fileID: 4656188047972473955}
   - component: {fileID: 4656188047972473954}
+  - component: {fileID: 4656188048689513151}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,13 +47,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectSpirit:
-  - {fileID: 6586477116843292235, guid: babe884431cf37942878834e6cff1042, type: 3}
-  - {fileID: 1689329557871794774, guid: cd31e2f3b86040745b8c452e4604d900, type: 3}
-  - {fileID: 1659841388545113696, guid: 2297ac2911d3f3147a59df20b5227a26, type: 3}
-  - {fileID: 4614570313349083373, guid: 8a4da86a2566cf4418e9603935499a4e, type: 3}
-  - {fileID: 5072934153413640633, guid: 8700f7f27c7ccfb489ede5f648ffaad7, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   spiritChosen: 
-  objectBossSpirit: []
+  objectBossSpirit:
+  - {fileID: 0}
   pos1: {fileID: 0}
   pos2: {fileID: 0}
   temp: 0
@@ -71,3 +73,81 @@ MonoBehaviour:
   day: 0
   spiritNum: 0
   testTimer: 9
+--- !u!114 &4656188048689513151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656188047972473953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6edfce1c02b27a5479412d280fa04dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receiptPrefab: {fileID: 5689772161029165430, guid: f6b66c7dd2f05ac4bb372039748562f6, type: 3}
+  receiptSpawn: {fileID: 7922643536813662045, guid: f27fcdb8ff58b2440b65f772e5a8485a, type: 3}
+  crimeCategories:
+  - level: 2
+    crimes:
+    - "Posted to TikTok with caption \u201CI\u2019m the rizzler\u201D "
+    - 'Excessive commenting on a picture of an anime girl '
+    - "Unnecessary spamming of the Doge \u201Cgo to horny jail\u201D image "
+    - 'Played too many dating sims '
+    - 'Used a cringe pick up line  '
+  - level: 3
+    crimes:
+    - 'Put extra extra pickles on In-N-Out burger '
+    - 'Ate 45 Chick Fil A nuggets in one sitting '
+    - 'Drank the grimace shake '
+    - 'Double-dipped in nacho cheese '
+    - 'Ate an entire tub of ice cream straight from the container '
+  - level: 4
+    crimes:
+    - 'Collectively stole 18 lbs of costco samples '
+    - 'Took soap bars from the public bathhouses '
+    - 'Stole the last kill in Fortnite '
+    - 'Hogged armrest during a flight '
+    - 'Stole free shampoo and conditioner from a hotel bathroom '
+  - level: 5
+    crimes:
+    - 'Got into an argument with a brony '
+    - 'Constant gamer rage (Left an ongoing game due to rage quit) '
+    - 'Started a thread argument on instagram comment section '
+    - 'Blocked their mom on social media '
+    - '10 minutes of yelling over discord vc '
+  - level: 6
+    crimes:
+    - "Told a child that the Tooth Fairy wasn\u2019t real "
+    - "Didn\u2019t dress up for Halloween "
+    - 'Touched the Elf on the Shelf '
+    - "Didn\u2019t play \u201CAll I Want for Christmas is You\u201D on Christmas
+      Day "
+    - "Didn\u2019t buy gifts for X-mas or play the role of Santa in their household  "
+  - level: 7
+    crimes:
+    - 'Did the Undertale genocide route first '
+    - 'Picked the "No Russian" mission in Call of Duty and killed all the civilians '
+    - "Microwaved silverware\u2026intentionally "
+    - 'Spoiled the end of a movie '
+    - 'Started a nerf gun war '
+  - level: 8
+    crimes:
+    - 'Photoshopped passport photograph for aesthetic purposes '
+    - 'Embezzlement '
+    - 'Used a fake name at Starbucks for the barista to shout '
+    - 'Pretended to know how to recite the entire bee movie script to impress their
+      crush '
+    - 'Told their parent they got a 5 on the AP test when they actually got a 1 '
+  - level: 9
+    crimes:
+    - 'Cheated on math test '
+    - 'Claimed "I have read and agree to the terms and conditions" without reading
+      them '
+    - 'Pulled on the gacha banner for their second favorite character instead of
+      saving for their first '
+    - "Turned on discord \u201CInvisible\u201D mode even though they continued to
+      be active "
+    - 'Attempted to overthrow the government '
+  receiptCharacterLengthMax: 10
+  activeReceipt: {fileID: 0}
