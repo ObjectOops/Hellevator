@@ -4,44 +4,43 @@ using UnityEngine;
 
 public class SpiritManager : MonoBehaviour
 {
-    public static SpiritManager instance;
+	public static SpiritManager instance;
 
-    public GameObject objectSpirit;
-    public GameObject objectBossSpirit;
+	[SerializeField] private Spirit spiritPrefab;
+	[SerializeField] private List<List<Trait>> traits;
+	public List<Transform> movementPoints;
 
-    public Transform pos1, pos2;
+	[HideInInspector] public Spirit activeSpirit;
 
-    private GameManager gameManager;
-    private void Start()
+	private void Start()
+	{
+		instance = this;
+	}
+
+	public IEnumerator GenerateSpirit(int day, int index)
+	{
+		Trait trait = traits[day][index];
+		Spirit spirit = Instantiate(spiritPrefab);
+		TransferTransform(spirit, movementPoints[0]); // Move to spawn point.
+		spirit.GetComponent<SpriteRenderer>().sprite = trait.sprite;
+		spirit.realName = trait.realName;
+		spirit.description = trait.description;
+		spirit.demise = trait.demise;
+		spirit.dialog = trait.dialog;
+		yield return spirit.GreetingSequence();
+	}
+
+	public void TransferTransform(Spirit s, Transform t)
     {
-        instance = this;
+		s.transform.position = t.position;
+		s.transform.rotation = t.rotation;
+		s.transform.localScale = t.localScale;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(gameManager == null)
-        {
-            gameManager = GameManager.instance;
-        }
-    }
-    public bool GenerateSpirit()
-    {
-        if(gameManager == null)
-        {
-            Debug.Log("Damn");
-        }
-        if(gameManager.spiritNum == 4)
-        {
-            gameManager.spiritNum = 5;
-            GameObject currentSpirit = Instantiate(objectBossSpirit);
-            return true;
-        }
-        else
-        {
-            gameManager.spiritNum++;
-            GameObject currentSpirit = Instantiate(objectSpirit);
-            return false;
-        }
-    }
+	[System.Serializable] private struct Trait
+	{
+		public Sprite sprite;
+		public string realName, description, demise;
+		public List<string> dialog;
+	}
 }

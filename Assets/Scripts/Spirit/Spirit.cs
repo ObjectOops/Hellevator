@@ -4,44 +4,27 @@ using UnityEngine;
 
 public class Spirit : MonoBehaviour
 {
-    private SpiritManager spiritManager;
+	[SerializeField] private ElevatorAnimator elevatorAnimator;
+    [SerializeField] private float greetingSequenceEndDelay;
+	
+	[HideInInspector] public string realName, description, demise;
+	[HideInInspector] public List<string> dialog;
 
-    [HideInInspector]
-    public int phase;
-    // Start is called before the first frame update
-    void Start()
+	private SpiritAnimator spiritAnimator;
+
+    private void Start()
     {
+        spiritAnimator = GetComponent<SpiritAnimator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator GreetingSequence()
     {
-        if (spiritManager == null)
-        {
-            spiritManager = SpiritManager.instance;
-        }
-        switch (phase)
-        {
-            //Fading in
-            case 0:
-                if(transform.localScale.y < 0.2)
-                {
-                    transform.localScale = new Vector3(transform.localScale.x + Time.deltaTime / 20f, transform.localScale.y + Time.deltaTime / 20f, transform.localScale.z);
-                }
-                else
-                {
-                    phase = 1;
-                }
-                break;
-            //Moving to the side and waiting for the elevator
-            case 1:
-                if(transform.position.x < spiritManager.pos2.position.x)
-                {
-                    transform.position = new Vector3(transform.position.x +  Time.deltaTime / 3, transform.position.y, transform.position.z);
-                }
-                break;
-            case 2:
-                break;
-        }
+/*        yield return spiritAnimator.FadeIn(); // Spirit fades in.
+        yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[1]); // Spirit moves in.
+        yield return Dialog.spiritBox.Print(dialog[0]); // Spirit speaks.
+        yield return Dialog.playerBox.Print(dialog[1]); // Player responds.
+*/        yield return new WaitForSeconds(greetingSequenceEndDelay);
     }
+
+
 }

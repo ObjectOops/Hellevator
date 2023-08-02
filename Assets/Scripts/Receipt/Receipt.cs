@@ -26,9 +26,9 @@ public class Receipt : MonoBehaviour
 	{
 		receiptAnimator.Discard();
 		bool correct = $"{buttonNameStart}_{level}" == button.name;
-		// SpiritManager.instance.activeSpirit.JudgementSequence(correct);
-		// SpiritManager.instance.activeSpirit.DepartureSequence();
-		// GameManager.instance.SetTrust(GameManager.instance.trust + (correct ? trustGain : trustLose))
-		// GameManager.instance.NextSpirit();
-	}
+/*		SpiritManager.instance.activeSpirit.JudgementSequence(correct);
+		SpiritManager.instance.activeSpirit.DepartureSequence();
+		GameManager.instance.SetTrust(GameManager.instance.trust + (correct ? trustGain : trustLose))
+		GameManager.instance.NextSpirit();
+*/	}
 }

@@ -19,46 +19,46 @@ public class ReceiptAnimator : MonoBehaviour
 	}
 
 	public void Print(string text)
-    {
+	{
 		isPrinting = true;
 		animator.SetTrigger("print");
 		StartCoroutine(LinearIn(text));
-    }
+	}
 
 	public void Discard()
-    {
+	{
 		isPrinting = false;
 		animator.SetTrigger("discard");
 		textMesh.text = "";
-    }
+	}
 
 	private IEnumerator LinearIn(string text)
-    {
+	{
 		textMesh.text = "";
 		foreach (char c in text)
-        {
+		{
 			if (isPrinting)
-            {
+			{
 				textMesh.text += c;
-            }
+			}
 			yield return new WaitForSeconds(textPrintDelay);
-        }
-    }
+		}
+	}
 
 	public void Trash()
-    {
+	{
 		Destroy(gameObject);
-    }
+	}
 
 	[ContextMenu("Test Print Animation")]
 	public void TestPrint()
-    {
+	{
 		Print(textMesh.text);
-    }
+	}
 
 	[ContextMenu("Test Discard Animation")]
 	public void TestDiscard()
-    {
+	{
 		Discard();
-    }
+	}
 }

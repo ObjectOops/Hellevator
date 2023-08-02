@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
-		if(spiritManager == null)
+/*		if(spiritManager == null)
 		{
             spiritManager = SpiritManager.instance;
         }
@@ -29,6 +29,6 @@ public class GameManager : MonoBehaviour
 			testTimer = 0;
 			spiritManager.GenerateSpirit();
 		}
-	}
+*/	}
 
 }
