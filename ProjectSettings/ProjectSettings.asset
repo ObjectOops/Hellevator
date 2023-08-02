@@ -157,6 +157,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.Team10.Hellevator
     Standalone: com.Team-10.Hellevator
+    iPhone: com.Team-10.Hellevator
   buildNumber:
     Standalone: 0
     iPhone: 0
