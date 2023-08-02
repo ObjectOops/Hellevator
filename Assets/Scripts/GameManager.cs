@@ -5,30 +5,50 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
-	private SpiritManager spiritManager;
-	//The day
-	public int day;
-	//How many spirit has been spawned this day
-	public int spiritNum;
-	//Timer for testing
-	public float testTimer = 9;
+
+	// Insert references to other scenes.
+	// Do not hide in inspector.
+	public int day = 1, trust = 500, judged = 0, limit = 5;
+
 	private void Start()
 	{
 		instance = this;
+		// Initialize UI.
+		StartCoroutine(NextSpirit());
 	}
 
-	private void Update()
-	{
-/*		if(spiritManager == null)
-		{
-            spiritManager = SpiritManager.instance;
-        }
-		testTimer += Time.deltaTime;
-		if(testTimer > 10 )
-		{
-			testTimer = 0;
-			spiritManager.GenerateSpirit();
-		}
-*/	}
+	public IEnumerator NextDay()
+    {
+		++day;
+		// Key assembly, updating the UI, going to the win scene, and general transition screens.
+		yield return null; // Temporary.
+    }
 
+	public IEnumerator NextSpirit()
+    {
+		yield return SpiritManager.instance.GenerateSpirit(day, judged);
+		bool boss = judged == limit;
+		ReceiptManager.instance.GenerateReceipt(boss);
+		if (boss)
+        {
+			yield return NextDay();
+        }
+    }
+
+	public void SetTrust(int newTrust)
+    {
+		trust = newTrust;
+		// Update UI.
+		TestTrust();
+    }
+
+	private void TestTrust()
+    {
+		if (trust <= 0)
+        {
+			// Go to game over scene.
+        }
+    }
+
+	// Go to game over scene function.
 }

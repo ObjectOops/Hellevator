@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DialogAnimator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField] private float textDelay;
 
-    // Update is called once per frame
-    void Update()
+	private Animator animator;
+	private TextMeshPro textMesh;
+
+	private void Start()
+	{
+		animator = GetComponent<Animator>();
+		textMesh = GetComponent<TextMeshPro>();
+	}
+
+	public IEnumerator LinearIn(string text)
     {
-        
-    }
+		textMesh.text = "";
+		foreach (char c in text)
+		{
+			textMesh.text += c;
+			yield return new WaitForSeconds(textDelay);
+		}
+	}
 }

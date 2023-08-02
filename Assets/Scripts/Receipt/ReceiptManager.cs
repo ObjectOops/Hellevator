@@ -9,6 +9,8 @@ public class ReceiptManager : MonoBehaviour
 	[SerializeField] private Receipt receiptPrefab;
 	[SerializeField] private Transform receiptSpawn;
 	[SerializeField] private List<CrimeCategory> crimeCategories;
+
+	// May need under some circumstances.
 	[SerializeField] private int receiptCharacterLengthMax;
 
 	[HideInInspector] public Receipt activeReceipt;
@@ -26,15 +28,14 @@ public class ReceiptManager : MonoBehaviour
 	public void GenerateReceipt(bool isBoss)
 	{
 		Receipt receipt = Instantiate(receiptPrefab);
-		receipt.transform.position = receiptSpawn.position;
-		receipt.transform.rotation = receiptSpawn.rotation;
+		receipt.transform.SetPositionAndRotation(receiptSpawn.position, receiptSpawn.rotation);
 		receipt.transform.localScale = receiptSpawn.localScale;
 
-		// [1, 10) --> for each of the nine levels.
-		int rand1 = Random.Range(1, 10), rand2 = Random.Range(1, 10);
+		// [2, 10) --> for each of the nine levels *with crimes*.
+		int rand1 = Random.Range(2, 10), rand2 = Random.Range(2, 10);
 		while (rand1 == rand2)
 		{
-			rand2 = Random.Range(1, 10);
+			rand2 = Random.Range(2, 10);
 		}
 		CrimeCategory minorLevel = crimeCategories[rand1], majorLevel = crimeCategories[rand2];
 		List<string> crimesCommitted = new();
@@ -58,13 +59,13 @@ public class ReceiptManager : MonoBehaviour
 		}
 
 		receipt.finePrint += 
-$@"{BreakString(SpiritManager.instance.activeSpirit.realName)}
-> {BreakString(SpiritManager.instance.activeSpirit.description)}
-> {BreakString(SpiritManager.instance.activeSpirit.demise)}
+$@"{SpiritManager.instance.activeSpirit.realName}
+> {SpiritManager.instance.activeSpirit.description}
+> {SpiritManager.instance.activeSpirit.demise}
 ---------------------";
 		foreach (string crime in crimesCommitted)
 		{
-			receipt.finePrint += $"\n{BreakString(crime)}";
+			receipt.finePrint += $"\n{crime}";
 		}
 		receipt.level = majorLevel.level;
 
@@ -72,6 +73,7 @@ $@"{BreakString(SpiritManager.instance.activeSpirit.realName)}
 		receipt.PrintSequence();
 	}
 
+	// May need under some circumstances.
 	private string BreakString(string str)
     {
 		string result = "";

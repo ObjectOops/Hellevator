@@ -17,14 +17,43 @@ public class Spirit : MonoBehaviour
         spiritAnimator = GetComponent<SpiritAnimator>();
     }
 
+    /*
+     * IMPORTANT
+     * The IEnumerator must be passed down the hierarchy all the way to Judge in the active Receipt or GameManager's Start!
+     */
+
     public IEnumerator GreetingSequence()
     {
+        yield return ElevatorAnimator.instance.Open();
         yield return spiritAnimator.FadeIn(); // Spirit fades in.
         yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[1]); // Spirit moves in.
-        yield return Dialog.spiritBox.Print(dialog[0]); // Spirit speaks.
-        yield return Dialog.playerBox.Print(dialog[1]); // Player responds.
+        yield return ElevatorAnimator.instance.Close();
+        yield return Dialog.spiritBox.Speak(dialog[0]); // Spirit speaks.
+        yield return Dialog.playerBox.Speak(dialog[1]); // Player responds.
 
         yield return new WaitForSeconds(greetingSequenceEndDelay);
-        // The IEnumerator must be passed down the hierarchy all the way to Judge in the active Receipt or GameManager start!
+        Dialog.EndAll();
+    }
+
+    public IEnumerator JudgementSequence(bool correct)
+    {
+        if (correct)
+        {
+            yield return Dialog.spiritBox.Speak(dialog[2]);
+        }
+        else
+        {
+            yield return Dialog.spiritBox.Speak(dialog[3]);
+        }
+        yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[2]);
+        yield return ElevatorAnimator.instance.Shake();
+    }
+
+    public IEnumerator DepartureSequence()
+    {
+        yield return ElevatorAnimator.instance.Shake();
+        yield return ElevatorAnimator.instance.Open();
+        yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[3]);
+        yield return spiritAnimator.FadeOut();
     }
 }

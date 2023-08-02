@@ -19,7 +19,8 @@ public class SpiritManager : MonoBehaviour
 
 	public IEnumerator GenerateSpirit(int day, int index)
 	{
-		Trait trait = traits[day][index];
+		// `day` starts from 1.
+		Trait trait = traits[day - 1][index];
 		Spirit spirit = Instantiate(spiritPrefab);
 		TransferTransform(spirit, movementPoints[0]); // Move to spawn point.
 		spirit.GetComponent<SpriteRenderer>().sprite = trait.sprite;
@@ -32,8 +33,7 @@ public class SpiritManager : MonoBehaviour
 
 	public void TransferTransform(Spirit s, Transform t)
     {
-		s.transform.position = t.position;
-		s.transform.rotation = t.rotation;
+		s.transform.SetPositionAndRotation(t.position, t.rotation);
 		s.transform.localScale = t.localScale;
     }
 

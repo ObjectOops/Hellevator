@@ -22,13 +22,14 @@ public class Receipt : MonoBehaviour
 		receiptAnimator.Print(finePrint);
 	}
 
-	public void Judge(Button button)
+	public IEnumerator Judge(Button button)
 	{
 		receiptAnimator.Discard();
 		bool correct = $"{buttonNameStart}_{level}" == button.name;
-/*		SpiritManager.instance.activeSpirit.JudgementSequence(correct);
-		SpiritManager.instance.activeSpirit.DepartureSequence();
-		GameManager.instance.SetTrust(GameManager.instance.trust + (correct ? trustGain : trustLose))
-		GameManager.instance.NextSpirit();
-*/	}
+        yield return SpiritManager.instance.activeSpirit.JudgementSequence(correct);
+        yield return SpiritManager.instance.activeSpirit.DepartureSequence();
+
+		GameManager.instance.SetTrust(GameManager.instance.trust + (correct ? trustGain : trustLose));
+        yield return GameManager.instance.NextSpirit();
+    }
 }

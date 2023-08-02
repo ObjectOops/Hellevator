@@ -7,12 +7,14 @@ using UnityEngine.InputSystem;
 public class Button : MonoBehaviour
 {
 	public static bool levelSelected = false;
+	public static List<Button> buttons = new();
 
 	private ButtonAnimator buttonAnimator;
 
 	private void Start()
 	{
 		buttonAnimator = GetComponent<ButtonAnimator>();
+		buttons.Add(this);
 	}
 
 	public void OnMouseDown()
@@ -20,14 +22,17 @@ public class Button : MonoBehaviour
 		if (!levelSelected)
 		{
 			buttonAnimator.Press();
-			ReceiptManager.instance.activeReceipt.Judge(this);
+			StartCoroutine(ReceiptManager.instance.activeReceipt.Judge(this));
 			levelSelected = true;
 		}
 	}
 
-	public void ResetButtons()
+	public static void ResetButtons()
 	{
-		buttonAnimator.Unpress();
+		foreach(Button button in buttons)
+        {
+			button.buttonAnimator.Unpress();
+        }
 		levelSelected = false;
 	}
 }

@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class Dialog : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] public static Dialog spiritBox, playerBox;
+
+    private DialogAnimator dialogAnimator;
+
+    private void Start()
     {
-        
+        dialogAnimator = GetComponent<DialogAnimator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator Speak(string speech)
     {
-        
+        gameObject.SetActive(true);
+        yield return dialogAnimator.LinearIn(speech);
+    }
+
+    public static void EndAll()
+    {
+        spiritBox.gameObject.SetActive(false);
+        playerBox.gameObject.SetActive(false);
+    }
+
+    [ContextMenu("Test Speak")]
+    public void TestSpeak()
+    {
+        StartCoroutine(Speak("Test."));
+    }
+
+    [ContextMenu("Test End All")]
+    public void TestEndAll()
+    {
+        EndAll();
     }
 }
