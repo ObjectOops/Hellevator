@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fc6adba5798a0439d2cb300e7fea85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textDelay: 1
+  textDelay: 0.1
 --- !u!114 &97342011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1644,50 +1644,68 @@ MonoBehaviour:
   receiptSpawn: {fileID: 482711087}
   crimeCategories:
   - level: 1
-    crimes:
-    - l1t1
-    - l1t2
-    - l1t3
+    crimes: []
   - level: 2
     crimes:
-    - l2t1
-    - l2t2
-    - l2t3
+    - "Posted to TikTok with caption \u201CI\u2019m the rizzler\u201D "
+    - 'Excessive commenting on a picture of an anime girl '
+    - "Unnecessary spamming of the Doge \u201Cgo to horny jail\u201D image "
+    - 'Played too many dating sims '
+    - 'Used a cringe pick up line  '
   - level: 3
     crimes:
-    - l3t1
-    - l3t2
-    - l3t3
+    - 'Put extra extra pickles on In-N-Out burger '
+    - 'Ate 45 Chick Fil A nuggets in one sitting '
+    - 'Drank the grimace shake '
+    - 'Double-dipped in nacho cheese '
+    - 'Ate an entire tub of ice cream straight from the container '
   - level: 4
     crimes:
-    - l4t1
-    - l4t2
-    - l4t3
+    - 'Collectively stole 18 lbs of costco samples '
+    - 'Took soap bars from the public bathhouses '
+    - 'Stole the last kill in Fortnite '
+    - 'Hogged armrest during a flight '
+    - 'Stole free shampoo and conditioner from a hotel bathroom '
   - level: 5
     crimes:
-    - l5t1
-    - l5t2
-    - l5t3
+    - 'Got into an argument with a brony '
+    - 'Constant gamer rage (Left an ongoing game due to rage quit) '
+    - 'Started a thread argument on instagram comment section '
+    - 'Blocked their mom on social media '
+    - '10 minutes of yelling over discord vc '
   - level: 6
     crimes:
-    - l6t1
-    - l6t2
-    - l6t3
+    - "Told a child that the Tooth Fairy wasn\u2019t real "
+    - "Didn\u2019t dress up for Halloween "
+    - 'Touched the Elf on the Shelf '
+    - "Didn\u2019t play \u201CAll I Want for Christmas is You\u201D on Christmas
+      Day "
+    - "Didn\u2019t buy gifts for X-mas or play the role of Santa in their household  "
   - level: 7
     crimes:
-    - l7t1
-    - l7t2
-    - l7t3
+    - 'Did the Undertale genocide route first '
+    - 'Picked the "No Russian" mission in Call of Duty and killed all the civilians '
+    - "Microwaved silverware\u2026 intentionally "
+    - 'Spoiled the end of a movie '
+    - 'Started a nerf gun war '
   - level: 8
     crimes:
-    - l8t1
-    - l8t2
-    - l8t3
+    - 'Photoshopped passport photograph for aesthetic purposes '
+    - 'Embezzlement '
+    - 'Used a fake name at Starbucks for the barista to shout '
+    - 'Pretended to know how to recite the entire bee movie script to impress their
+      crush '
+    - 'Told their parent they got a 5 on the AP test when they actually got a 1 '
   - level: 9
     crimes:
-    - l9t1
-    - l9t2
-    - l9t3
+    - 'Cheated on math test '
+    - 'Claimed "I have read and agree to the terms and conditions" without reading
+      them '
+    - 'Pulled on the gacha banner for their second favorite character instead of
+      saving for their first '
+    - "Turned on discord \u201CInvisible\u201D mode even though they continued to
+      be active "
+    - 'Attempted to overthrow the government '
   receiptCharacterLengthMax: 0
   activeReceipt: {fileID: 0}
 --- !u!1 &706057222
@@ -1821,7 +1839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fc6adba5798a0439d2cb300e7fea85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textDelay: 1
+  textDelay: 0.1
 --- !u!114 &790463948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3806,50 +3824,51 @@ MonoBehaviour:
   spiritPrefab: {fileID: 8176770423405531543, guid: 63376eb84babd874eb81fb68ba45641e, type: 3}
   traits:
   - sprite: {fileID: 21300000, guid: 2db302a54dc26a74c9bed703ea0d4ad7, type: 3}
-    realName: Pirate
-    description: Ahoy.
-    demise: Whiskey.
+    realName: 'Cap Tane '
+    description: Pirate
+    demise: 'Got too silly and played Twister with a Sea Monster '
     dialog:
-    - d1
-    - d2
-    - d3
-    - d4
+    - "Yarr! \u2019Tis not mine ship, whereth am-eth I-eth?"
+    - Use context clues, captain.
+    - "Yarr, this sounds-eth about-eth right\u2026 TBH."
+    - "Arr, ye be mistaken... use context clues next time\u2026 -eth."
   - sprite: {fileID: 21300000, guid: a246d47072c57c24b91dda5087c8c4fd, type: 3}
-    realName: Doc
-    description: Medic.
-    demise: IV.
+    realName: Dr. Noseallot
+    description: Psychologist
+    demise: Tried to hard at poker
     dialog:
-    - d1
-    - d2
-    - d3
-    - d4
+    - "Tell me, how\u2019s this job working out for you?"
+    - It has its ups and downs.
+    - "Oh yes, people on this floor have so many issues\u2026 I could fix them\u2026!"
+    - "Agh\u2026 everyone here is so mentally stable! NOOOO!"
   - sprite: {fileID: 21300000, guid: ac8b7e3fb911e58488da6e0209c6cc76, type: 3}
-    realName: Hector
-    description: Vintage.
-    demise: Lead.
+    realName: Caul Ector
+    description: Antique Dealer
+    demise: Dead trying to recover a stolen old coin
     dialog:
-    - d1
-    - d2
-    - d3
-    - d4
+    - "This elevator\u2026haah\u2026would sell for\u2026so\u2026much\u2026haah, haah\u2026!"
+    - Dude. Calm down.
+    - Ooh, I see more clients there!
+    - "Young boy, I could sell you instead\u2026"
   - sprite: {fileID: 21300000, guid: 0f88453f864e4cc48b88aa9c1d0077f5, type: 3}
-    realName: __xx_xx__
-    description: XD.
-    demise: Red Bull.
+    realName: Terry Bull
+    description: Pro League of Legends Player
+    demise: Drank too much G-Fuel
     dialog:
-    - d1
-    - d2
-    - d3
-    - d4
+    - "Wh0\u2019s y0ur ma1n, br0?"
+    - Mario.
+    - Y3AHHH! Wa1t, can w3 qu3u3 anoth3r?
+    - BRUH, ur3 thr0w1ng my 3L0!
   - sprite: {fileID: 21300000, guid: acf0def864ee66e45b60b34ec427b46b, type: 3}
-    realName: Nerd
-    description: Nerding.
-    demise: Nerds.
+    realName: Gene Yuss
+    description: Nerd
+    demise: Car accident
     dialog:
-    - d1
-    - d2
-    - d3
-    - d4
+    - "Ermmm, imagine failing a math test\u2026 could never be my shrewd self."
+    - "At least I\u2019ve touched grass before."
+    - "Your hypothesis proved correct, I\u2019ll admit! Also, I can do mental maths,
+      so I won\u2019t be needing this."
+    - "Ermmm, actshually\u2026 your decision appears to be incorrect."
   movementPoints:
   - {fileID: 1816628751}
   - {fileID: 1421936198}
