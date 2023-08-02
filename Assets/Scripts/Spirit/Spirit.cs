@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spirit : MonoBehaviour
 {
     private SpiritManager spiritManager;
+    private ElevatorAnimator elevatorAnimator;
 
     [HideInInspector]
     public enum phases { Greeting, Judgement, Departure };
@@ -12,6 +13,7 @@ public class Spirit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -20,6 +22,11 @@ public class Spirit : MonoBehaviour
         if (spiritManager == null)
         {
             spiritManager = SpiritManager.instance;
+        }
+        if(elevatorAnimator == null)
+        {
+            elevatorAnimator = ElevatorAnimator.instance;
+            elevatorAnimator.ElevatorOpen();
         }
         switch (phase)
         {
@@ -31,7 +38,7 @@ public class Spirit : MonoBehaviour
                 }
                 else
                 {
-                    phase = phases.Judgement;
+                    elevatorAnimator.ElevatorClose();
                 }
                 break;
             //Moving to the side and waiting for the elevator
