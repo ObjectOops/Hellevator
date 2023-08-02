@@ -10,7 +10,7 @@ public class ReceiptManager : MonoBehaviour
 	[SerializeField] private GameObject receiptSpawn;
 	[SerializeField] private List<CrimeCategory> crimeCategories;
 
-	public Receipt activeReceipt;
+	[HideInInspector] public Receipt activeReceipt;
 
 	private void Start()
 	{
@@ -51,9 +51,10 @@ public class ReceiptManager : MonoBehaviour
 			crimesCommitted[i] = swap;
 		}
 
+		// receipt.finePrint += $"{SpiritManager.instance.activeSpirit.realName}\n---------------------";
 		foreach (string crime in crimesCommitted)
 		{
-			receipt.crimes += crime + '\n';
+			receipt.finePrint += '\n' + crime;
 		}
 		receipt.level = majorLevel.level;
 
