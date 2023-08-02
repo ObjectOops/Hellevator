@@ -57,12 +57,12 @@ public class ReceiptManager : MonoBehaviour
 			crimesCommitted[swapIndex] = crimesCommitted[i];
 			crimesCommitted[i] = swap;
 		}
-		
+		/*
 		receipt.finePrint += 
 $@"{BreakString(SpiritManager.instance.activeSpirit.realName)}
 > {BreakString(SpiritManager.instance.activeSpirit.description)}
 > {BreakString(SpiritManager.instance.activeSpirit.demise)}
----------------------";
+---------------------";*/
 		foreach (string crime in crimesCommitted)
 		{
 			receipt.finePrint += $"\n{BreakString(crime)}";
