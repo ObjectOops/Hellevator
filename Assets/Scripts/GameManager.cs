@@ -25,16 +25,19 @@ public class GameManager : MonoBehaviour
 	public IEnumerator NextDay()
     {
 		++day;
+		judged = 0;
 		// Key assembly, updating the UI, going to the win scene, and general transition screens.
 		yield return null; // Temporary.
     }
 
 	public IEnumerator NextSpirit()
     {
+		Button.ResetButtons();
 		Debug.Log("Starting GenerateSpirit coroutine", this);
 		yield return SpiritManager.instance.GenerateSpirit(day, judged);
 		bool boss = judged == limit;
 		ReceiptManager.instance.GenerateReceipt(boss);
+		++judged;
 		if (boss)
         {
 			yield return NextDay();

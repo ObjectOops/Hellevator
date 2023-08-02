@@ -30,6 +30,7 @@ public class SpiritManager : MonoBehaviour
 		spirit.description = trait.description;
 		spirit.demise = trait.demise;
 		spirit.dialog = trait.dialog;
+		activeSpirit = spirit;
 		yield return spirit.GreetingSequence();
 	}
 

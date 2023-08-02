@@ -21,8 +21,7 @@ public class Dialog : MonoBehaviour
         {
             playerBox = this;
         }
-        spiritBox.gameObject.SetActive(false);
-        playerBox.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     private void Start()

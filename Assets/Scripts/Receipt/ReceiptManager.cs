@@ -36,10 +36,10 @@ public class ReceiptManager : MonoBehaviour
 		receipt.transform.localScale = receiptSpawn.localScale;
 
 		// [2, 10) --> for each of the nine levels *with crimes*.
-		int rand1 = Random.Range(2, 10), rand2 = Random.Range(2, 10);
+		int rand1 = Random.Range(1, 9), rand2 = Random.Range(1, 9);
 		while (rand1 == rand2)
 		{
-			rand2 = Random.Range(2, 10);
+			rand2 = Random.Range(1, 9);
 		}
 		CrimeCategory minorLevel = crimeCategories[rand1], majorLevel = crimeCategories[rand2];
 		List<string> crimesCommitted = new();

@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spirit_Box
+  - Player_Box
   layers:
   - Default
   - TransparentFX

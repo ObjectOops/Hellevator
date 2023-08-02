@@ -12,10 +12,15 @@ public class ReceiptAnimator : MonoBehaviour
 
 	private bool isPrinting;
 
-	private void Start()
-	{
+    private void Awake()
+    {
 		animator = GetComponent<Animator>();
-		textMesh = transform.GetComponentInChildren<TextMeshPro>();
+		textMesh = transform.GetComponentInChildren<TextMeshPro>();        
+    }
+
+    private void Start()
+	{
+		// Intentionally empty.
 	}
 
 	public void Print(string text)

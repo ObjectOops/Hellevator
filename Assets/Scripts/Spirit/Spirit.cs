@@ -51,14 +51,15 @@ public class Spirit : MonoBehaviour
             yield return Dialog.spiritBox.Speak(dialog[3]);
         }
         yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[2]);
-        yield return ElevatorAnimator.instance.Shake();
+        // yield return ElevatorAnimator.instance.Shake();
     }
 
     public IEnumerator DepartureSequence()
     {
-        yield return ElevatorAnimator.instance.Shake();
+        // yield return ElevatorAnimator.instance.Shake();
         yield return ElevatorAnimator.instance.Open();
         yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[3]);
         yield return spiritAnimator.FadeOut();
+        Destroy(gameObject);
     }
 }

@@ -12,9 +12,14 @@ public class Receipt : MonoBehaviour
 	[HideInInspector] public string finePrint;
 	[HideInInspector] public int level;
 
-	private void Start()
-	{
+    private void Awake()
+    {
 		receiptAnimator = GetComponent<ReceiptAnimator>();
+    }
+
+    private void Start()
+	{
+		// Intentionally empty.
 	}
 
 	public void PrintSequence()
