@@ -13,10 +13,15 @@ public class ElevatorAnimator : MonoBehaviour
 
 	private Animator animator;
 
+	private void Awake()
+	{
+		instance = this;
+		animator = GetComponent<Animator>();
+	}
+
 	private void Start()
 	{
-		animator = GetComponent<Animator>();
-		instance = this;
+		// Intentionally empty.
 	}
 
 	public IEnumerator Open()

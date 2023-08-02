@@ -10,14 +10,21 @@ public class DialogAnimator : MonoBehaviour
 	private Animator animator;
 	private TextMeshPro textMesh;
 
-	private void Start()
-	{
+    private void Awake()
+    {
+		textMesh = GetComponentInChildren<TextMeshPro>();
 		animator = GetComponent<Animator>();
-		textMesh = GetComponent<TextMeshPro>();
+		Debug.Log("DialogAnimator components initiated.", this);
+	}
+
+    private void Start()
+	{
+		// Intentionally empty.
 	}
 
 	public IEnumerator LinearIn(string text)
     {
+		Debug.Log(textMesh == null, this);
 		textMesh.text = "";
 		foreach (char c in text)
 		{

@@ -15,10 +15,13 @@ public class ReceiptManager : MonoBehaviour
 
 	[HideInInspector] public Receipt activeReceipt;
 
-	private void Start()
+	private void Awake()
 	{
 		instance = this;
+	}
 
+	private void Start()
+	{
 		if (crimeCategories.Count != 9)
 		{
 			Debug.LogWarning("Crime category count does not equal nine.", this);

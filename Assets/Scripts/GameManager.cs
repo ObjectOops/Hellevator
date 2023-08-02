@@ -10,13 +10,16 @@ public class GameManager : MonoBehaviour
 	// Do not hide in inspector.
 	public int day = 1, trust = 500, judged = 0, limit = 5;
 
-	private void Start()
-	{
+    private void Awake()
+    {
 		instance = this;
+    }
+
+    private void Start()
+	{
 		// Initialize UI.
-		Debug.Log("what");
+		Debug.Log("Starting NextSpirit coroutine.", this);
 		StartCoroutine(NextSpirit());
-		Debug.Log("what2");
 	}
 
 	public IEnumerator NextDay()
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour
 
 	public IEnumerator NextSpirit()
     {
+		Debug.Log("Starting GenerateSpirit coroutine", this);
 		yield return SpiritManager.instance.GenerateSpirit(day, judged);
 		bool boss = judged == limit;
 		ReceiptManager.instance.GenerateReceipt(boss);

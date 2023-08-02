@@ -34,6 +34,7 @@ public class SpiritAnimator : MonoBehaviour
         Color opaque = new(255, 255, 255, 255);
         for (float t = 0f; t < 1f; t += lerpSpeed * Time.deltaTime)
         {
+            Debug.Log(t);
             spriteRenderer.color = Color.Lerp(transparent, opaque, t);
             yield return new WaitForSeconds(lerpDelay);
         }

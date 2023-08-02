@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Spirit : MonoBehaviour
 {
-	[SerializeField] private ElevatorAnimator elevatorAnimator;
     [SerializeField] private float greetingSequenceEndDelay;
 	
 	[HideInInspector] public string realName, description, demise;
@@ -24,13 +23,19 @@ public class Spirit : MonoBehaviour
 
     public IEnumerator GreetingSequence()
     {
+        Debug.Log("Performing GreetingSequence animations.", this);
         yield return ElevatorAnimator.instance.Open();
+        Debug.Log("Elevator opening animation complete.", this);
         yield return spiritAnimator.FadeIn(); // Spirit fades in.
+        Debug.Log("Spirit fade in animation complete.", this);
         yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[1]); // Spirit moves in.
         yield return ElevatorAnimator.instance.Close();
+        Debug.Log("Speak 1", this);
         yield return Dialog.spiritBox.Speak(dialog[0]); // Spirit speaks.
+        Debug.Log("Speak 2", this);
         yield return Dialog.playerBox.Speak(dialog[1]); // Player responds.
 
+        Debug.Log("Animations suceeded.", this);
         yield return new WaitForSeconds(greetingSequenceEndDelay);
         Dialog.EndAll();
     }

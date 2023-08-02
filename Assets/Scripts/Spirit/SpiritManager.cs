@@ -12,13 +12,14 @@ public class SpiritManager : MonoBehaviour
 
 	[HideInInspector] public Spirit activeSpirit;
 
-	private void Start()
+	private void Awake()
 	{
 		instance = this;
 	}
 
 	public IEnumerator GenerateSpirit(int day, int index)
 	{
+		Debug.Log("Setting instantiated spirit attributes.", this);
 		// `day` starts from 1.
 		Trait trait = traits[(day - 1) * GameManager.instance.limit + index];
 		GameObject spiritObject = Instantiate(spiritPrefab);
