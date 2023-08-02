@@ -19,12 +19,12 @@ public class Spirit : MonoBehaviour
 
     public IEnumerator GreetingSequence()
     {
-/*        yield return spiritAnimator.FadeIn(); // Spirit fades in.
+        yield return spiritAnimator.FadeIn(); // Spirit fades in.
         yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[1]); // Spirit moves in.
         yield return Dialog.spiritBox.Print(dialog[0]); // Spirit speaks.
         yield return Dialog.playerBox.Print(dialog[1]); // Player responds.
-*/        yield return new WaitForSeconds(greetingSequenceEndDelay);
+
+        yield return new WaitForSeconds(greetingSequenceEndDelay);
+        // The IEnumerator must be passed down the hierarchy all the way to Judge in the active Receipt or GameManager start!
     }
-
-
 }
