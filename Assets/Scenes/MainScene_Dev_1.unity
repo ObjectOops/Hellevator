@@ -4166,6 +4166,101 @@ MonoBehaviour:
     - "Your hypothesis proved correct, I\u2019ll admit! Also, I can do mental maths,
       so I won\u2019t be needing this."
     - "Ermmm, actshually\u2026 your decision appears to be incorrect."
+  - sprite: {fileID: 9813602, guid: 4237d6bf3328ffc45952b6db452417fa, type: 3}
+    realName: Joe King
+    description: Court Jester
+    demise: Joked about the emperor's love life
+    dialog:
+    - "How do angels greet each other if they don\u2019t say hello? Heaven-o!"
+    - I think hell-o is still more appropriate, given our location.
+    - "Two men walk into a bar\u2026 One stays in the elevator."
+    - "Two men walk into the wrong circle of hell\u2026"
+  - sprite: {fileID: 9813602, guid: 4237d6bf3328ffc45952b6db452417fa, type: 3}
+    realName: Charlie Hoarse
+    description: Olympic sprinter
+    demise: Treadmill blew up
+    dialog:
+    - "Haah, haah\u2026 Whew, what a run! Got any water? I'm dying here."
+    - "Dying\u2026 Isn\u2019t that what you\u2019re supposed to be doing?"
+    - "I\u2019ll race you there! \u2026You\u2019re not coming, are you."
+    - "You\u2019d better be the one to start running."
+  - sprite: {fileID: 9813602, guid: 4237d6bf3328ffc45952b6db452417fa, type: 3}
+    realName: Robin Bancs
+    description: French burglar
+    demise: Got ze electric chair for taking un selfie at le crime scene
+    dialog:
+    - "Zere is a certain\u2026 je ne sais quoi to being executed for being beautiful,
+      non?"
+    - "O-oui\u2026 (What\u2019s this guy waffling about?)"
+    - "Alors! You \u2019ave recognized my charm, oui?"
+    - "Mon dieu\u2026oh non. You are quite ne pas intelligente, oui?"
+  - sprite: {fileID: 9813602, guid: 4237d6bf3328ffc45952b6db452417fa, type: 3}
+    realName: Deid Mann
+    description: '"Salesman"'
+    demise: Carried off and killed by a hippopotamus
+    dialog:
+    - Hey, kid. You interested in some rare floral concoctions?
+    - "I\u2019m twelve."
+    - "Ha\u2026 You should be my sales partner! In a few years, of course."
+    - "You know, 95% of clients who chose this floor\u2026 had extremely negative
+      reviews!"
+  - sprite: {fileID: 9813602, guid: 4237d6bf3328ffc45952b6db452417fa, type: 3}
+    realName: Miranda Wrights
+    description: Police officer
+    demise: Fell off segway while chasing a speeding car
+    dialog:
+    - "They didn\u2019t let me bring my segway in here! You think I can charge them
+      for that?"
+    - Not really sure if cops have authority over literal demons.
+    - "Alright, I\u2019ll let you off the hook with a warning\u2026and here's a donut;
+      I can\u2019t really eat it now that I\u2019m a ghost."
+    - You have the right to remain silent. Put your hands up. Now!
+  - sprite: {fileID: 9813602, guid: 4237d6bf3328ffc45952b6db452417fa, type: 3}
+    realName: Pearl E. White
+    description: Dentist
+    demise: Shock of one of her clients acquiring 20 cavities
+    dialog:
+    - Are you in need of a teeth cleaning?!
+    - "If it\u2019s free."
+    - "I\u2019ll put in a good word with the tooth fairy."
+    - "\u2026Improve your dental and mental hygiene, please."
+  - sprite: {fileID: 9813602, guid: 4237d6bf3328ffc45952b6db452417fa, type: 3}
+    realName: Lee Galle
+    description: Lawyer (aspiring judge)
+    demise: Fell from a burning bridge after court dismissal
+    dialog:
+    - Whose crimes are we examining today, Your Honor?
+    - "Yours\u2026"
+    - May it please the court.
+    - "You\u2019d better plead the fifth."
+  - sprite: {fileID: 9813602, guid: 4237d6bf3328ffc45952b6db452417fa, type: 3}
+    realName: Asher Gray
+    description: Crematorium worker
+    demise: Burned alive
+    dialog:
+    - In the inevitable face of death, pray tell, what do we live for?
+    - "Dude, neither of us are alive right now\u2026 (for the time being)."
+    - You got lucky, my friend.
+    - "I\u2019d be happy to prepare you for YOUR burial."
+  - sprite: {fileID: 9813602, guid: 4237d6bf3328ffc45952b6db452417fa, type: 3}
+    realName: Rorden Gamsay
+    description: British Chef
+    demise: Tasted raw chicken (from Resnik)
+    dialog:
+    - "Bloody hell! It\u2019s hot down here, innit? D\u2019you reckon it's hot enough
+      to cook beef wellington?"
+    - If you can find a pan, feel free to try.
+    - "I\u2019ll start a real Hell\u2019s Kitchen with the other blokes down there."
+    - "You\u2019re an idiot sandwich, mate!"
+  - sprite: {fileID: 9813602, guid: 4237d6bf3328ffc45952b6db452417fa, type: 3}
+    realName: Miss. Fortune
+    description: Fortune teller
+    demise: Natural causes
+    dialog:
+    - "Let\u2019s see if you can read my fate."
+    - "Less \u2018reading\u2019 your fate than \u2018announcing\u2019 it\u2026"
+    - "I can see great things in your future. Take this; it will guide you\u2026"
+    - Be very, very careful on the 11th of August, 2023, at 1:37 PM.
   movementPoints:
   - {fileID: 1816628751}
   - {fileID: 1421936198}
