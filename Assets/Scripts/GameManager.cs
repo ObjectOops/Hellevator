@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     {
 		++day;
 		judged = 0;
+		UIManager.instance.SetDay(day);
 		// Key assembly, updating the UI, going to the win scene, and general transition screens.
 		yield return null; // Temporary.
     }
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
 		trust = newTrust;
 		// Update UI.
 		TestTrust();
+		UIManager.instance.SetTrust(trust);
     }
 
 	private void TestTrust()
