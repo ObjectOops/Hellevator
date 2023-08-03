@@ -60,6 +60,7 @@ public class Spirit : MonoBehaviour
         yield return ElevatorAnimator.instance.Open();
         yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[3]);
         yield return spiritAnimator.FadeOut();
+        yield return ElevatorAnimator.instance.Close();
         Destroy(gameObject);
     }
 }
