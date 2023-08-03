@@ -1,19 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    private void Start()
+    public TextMeshPro day;
+    public TextMeshPro trust;
+
+    private void Awake()
     {
         instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetDay(int input)
     {
-        
+        day.text = "Day: " + input.ToString();
+    }
+
+    public void SetTrust(int input)
+    {
+        trust.text = "Trust: " + input.ToString();
     }
 }
