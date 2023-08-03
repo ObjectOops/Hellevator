@@ -46,11 +46,13 @@ public class ReceiptManager : MonoBehaviour
 
 		// One minor crime.
 		crimesCommitted.Add(minorLevel.crimes[Random.Range(0, minorLevel.crimes.Count)]);
+		receipt.level = minorLevel.level;
 		if (isBoss)
 		{
 			// Two major crimes.
 			crimesCommitted.Add(majorLevel.crimes[Random.Range(0, majorLevel.crimes.Count)]);
 			crimesCommitted.Add(majorLevel.crimes[Random.Range(0, majorLevel.crimes.Count)]);
+			receipt.level = majorLevel.level;
 		}
 
 		// Scramble the order of crimes.
@@ -71,7 +73,6 @@ $@"{SpiritManager.instance.activeSpirit.realName}
 		{
 			receipt.finePrint += $"\n{crime}";
 		}
-		receipt.level = majorLevel.level;
 
 		activeReceipt = receipt;
 		receipt.PrintSequence();

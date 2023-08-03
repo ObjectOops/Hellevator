@@ -9,6 +9,8 @@ public class Button : MonoBehaviour
 	public static bool levelSelected = false;
 	public static List<Button> buttons = new();
 
+	[SerializeField] private int level;
+
 	private ButtonAnimator buttonAnimator;
 
 	private void Start()
@@ -22,7 +24,7 @@ public class Button : MonoBehaviour
 		if (!levelSelected)
 		{
 			buttonAnimator.Press();
-			StartCoroutine(ReceiptManager.instance.activeReceipt.Judge(this));
+			StartCoroutine(ReceiptManager.instance.activeReceipt.Judge(level));
 			levelSelected = true;
 		}
 	}

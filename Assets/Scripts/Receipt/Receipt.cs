@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Receipt : MonoBehaviour
 {
-	[SerializeField] private string buttonNameStart;
 	[SerializeField] private int trustGain, trustLose;
 
 	private ReceiptAnimator receiptAnimator;
@@ -27,10 +26,11 @@ public class Receipt : MonoBehaviour
 		receiptAnimator.Print(finePrint);
 	}
 
-	public IEnumerator Judge(Button button)
+	public IEnumerator Judge(int buttonLevel)
 	{
 		receiptAnimator.Discard();
-		bool correct = $"{buttonNameStart}_{level}" == button.name;
+		bool correct = buttonLevel == level;
+		Debug.Log("Button vs. Level: " + buttonLevel + ' ' + level, this);
         yield return SpiritManager.instance.activeSpirit.JudgementSequence(correct);
         yield return SpiritManager.instance.activeSpirit.DepartureSequence();
 

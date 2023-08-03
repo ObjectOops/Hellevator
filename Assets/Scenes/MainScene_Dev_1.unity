@@ -153,12 +153,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1508911387}
-  m_RootOrder: 0
+  m_Father: {fileID: 1607135108}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.265, y: 0}
+  m_AnchoredPosition: {x: 0.2, y: 0.31}
   m_SizeDelta: {x: 0.27, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &25155422
@@ -208,14 +208,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -324,11 +324,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77785657}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: -0.2, y: -0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 132102297}
+  m_Children: []
   m_Father: {fileID: 1607135108}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -408,6 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaad5dde548fa4409a8cda67b6cc040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 4
 --- !u!61 &77785662
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -482,8 +482,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97342008}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0.507997, z: 9.936468}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.025, y: 0.465, z: 9.936468}
+  m_LocalScale: {x: 0.9, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2004630592}
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fc6adba5798a0439d2cb300e7fea85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textDelay: 0.1
+  textDelay: 0.03
 --- !u!114 &97342011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,12 +598,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 77785658}
-  m_RootOrder: 0
+  m_Father: {fileID: 1607135108}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.265, y: 0}
+  m_AnchoredPosition: {x: -0.2, y: -0.01}
   m_SizeDelta: {x: 0.27, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &132102298
@@ -653,14 +653,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -770,12 +770,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 823314996}
-  m_RootOrder: 0
+  m_Father: {fileID: 1607135108}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.265, y: 0}
+  m_AnchoredPosition: {x: -0.2, y: -0.33}
   m_SizeDelta: {x: 0.27, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &150356284
@@ -825,14 +825,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -941,11 +941,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218615549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0.35, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: -0.2, y: 0.31, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2123637574}
+  m_Children: []
   m_Father: {fileID: 1607135108}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1025,6 +1024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaad5dde548fa4409a8cda67b6cc040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 2
 --- !u!61 &218615554
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1096,7 +1096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224852959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: -0.32, z: 0}
+  m_LocalPosition: {x: 0.07, y: -0.28, z: 0}
   m_LocalScale: {x: 0.11, y: 0.11, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1133,12 +1133,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2035718615}
-  m_RootOrder: 0
+  m_Father: {fileID: 1607135108}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.265, y: 0}
+  m_AnchoredPosition: {x: -0.2, y: -0.65}
   m_SizeDelta: {x: 0.27, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &420249596
@@ -1188,14 +1188,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1300,11 +1300,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425120247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.65, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: 0.2, y: 0.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1002088921}
+  m_Children: []
   m_Father: {fileID: 1607135108}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1449,17 +1448,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510074438}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1183272042}
-  m_RootOrder: 0
+  m_Father: {fileID: 1607135108}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.265, y: 0}
+  m_AnchoredPosition: {x: -0.2, y: 0.63}
   m_SizeDelta: {x: 0.27, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &510074440
@@ -1509,14 +1508,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1647,65 +1646,65 @@ MonoBehaviour:
     crimes: []
   - level: 2
     crimes:
-    - "Posted to TikTok with caption \u201CI\u2019m the rizzler\u201D "
-    - 'Excessive commenting on a picture of an anime girl '
-    - "Unnecessary spamming of the Doge \u201Cgo to horny jail\u201D image "
-    - 'Played too many dating sims '
-    - 'Used a cringe pick up line  '
+    - "Posted to TikTok with caption \u201CI\u2019m the rizzler\u201D."
+    - Excessive commenting on a picture of an anime girl.
+    - "Unnecessary spamming of the Doge \u201Cgo to horny jail\u201D image."
+    - Played too many dating sims.
+    - Used a cringe pick up line.
   - level: 3
     crimes:
-    - 'Put extra extra pickles on In-N-Out burger '
-    - 'Ate 45 Chick Fil A nuggets in one sitting '
-    - 'Drank the grimace shake '
-    - 'Double-dipped in nacho cheese '
-    - 'Ate an entire tub of ice cream straight from the container '
+    - Put extra extra pickles on In-N-Out burger.
+    - Ate 45 Chick Fil A nuggets in one sitting.
+    - Drank the grimace shake.
+    - Double-dipped in nacho cheese.
+    - Ate an entire tub of ice cream straight from the container.
   - level: 4
     crimes:
-    - 'Collectively stole 18 lbs of costco samples '
-    - 'Took soap bars from the public bathhouses '
-    - 'Stole the last kill in Fortnite '
-    - 'Hogged armrest during a flight '
-    - 'Stole free shampoo and conditioner from a hotel bathroom '
+    - Collectively stole 18 lbs of Costco samples.
+    - Took soap bars from the public bathhouses.
+    - Stole the last kill in Fortnite.
+    - Hogged armrest during a flight.
+    - Stole free shampoo and conditioner from a hotel bathroom.
   - level: 5
     crimes:
-    - 'Got into an argument with a brony '
-    - 'Constant gamer rage (Left an ongoing game due to rage quit) '
-    - 'Started a thread argument on instagram comment section '
-    - 'Blocked their mom on social media '
-    - '10 minutes of yelling over discord vc '
+    - Got into an argument with a brony.
+    - Constant gamer rage (Left an ongoing game due to rage quit).
+    - Started a thread argument on instagram comment section.
+    - Blocked their mom on social media.
+    - 10 minutes of yelling over Discord VC.
   - level: 6
     crimes:
-    - "Told a child that the Tooth Fairy wasn\u2019t real "
-    - "Didn\u2019t dress up for Halloween "
-    - 'Touched the Elf on the Shelf '
+    - "Told a child that the Tooth Fairy wasn\u2019t real."
+    - "Didn\u2019t dress up for Halloween."
+    - Touched the Elf on the Shelf.
     - "Didn\u2019t play \u201CAll I Want for Christmas is You\u201D on Christmas
-      Day "
-    - "Didn\u2019t buy gifts for X-mas or play the role of Santa in their household  "
+      Day."
+    - "Didn\u2019t buy gifts for X-mas or play the role of Santa in their household."
   - level: 7
     crimes:
-    - 'Did the Undertale genocide route first '
-    - 'Picked the "No Russian" mission in Call of Duty and killed all the civilians '
-    - "Microwaved silverware\u2026 intentionally "
-    - 'Spoiled the end of a movie '
-    - 'Started a nerf gun war '
+    - Did the Undertale genocide route first.
+    - Picked the "No Russian" mission in Call of Duty and killed all the civilians.
+    - "Microwaved silverware\u2026 intentionally."
+    - Spoiled the end of a movie.
+    - Started a nerf gun war.
   - level: 8
     crimes:
-    - 'Photoshopped passport photograph for aesthetic purposes '
-    - 'Embezzlement '
-    - 'Used a fake name at Starbucks for the barista to shout '
-    - 'Pretended to know how to recite the entire bee movie script to impress their
-      crush '
-    - 'Told their parent they got a 5 on the AP test when they actually got a 1 '
+    - Photoshopped passport photograph for aesthetic purposes.
+    - Embezzlement.
+    - Used a fake name at Starbucks for the barista to shout.
+    - Pretended to know how to recite the entire bee movie script to impress their
+      crush.
+    - Told their parent they got a 5 on the AP test when they actually got a 1.
   - level: 9
     crimes:
-    - 'Cheated on math test '
-    - 'Claimed "I have read and agree to the terms and conditions" without reading
-      them '
-    - 'Pulled on the gacha banner for their second favorite character instead of
-      saving for their first '
-    - "Turned on discord \u201CInvisible\u201D mode even though they continued to
-      be active "
-    - 'Attempted to overthrow the government '
+    - Cheated on math test.
+    - Claimed "I have read and agree to the terms and conditions" without reading
+      them.
+    - Pulled on the gacha banner for their second favorite character instead of saving
+      for their first.
+    - "Turned on Discord \u201CInvisible\u201D mode even though they continued to
+      be active."
+    - Attempted to overthrow the government.
   receiptCharacterLengthMax: 0
   activeReceipt: {fileID: 0}
 --- !u!1 &706057222
@@ -1819,8 +1818,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790463945}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -0.1, z: 9.936468}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.025, y: -0.445, z: 9.936468}
+  m_LocalScale: {x: 0.9, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2067010595}
@@ -1839,7 +1838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fc6adba5798a0439d2cb300e7fea85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textDelay: 0.1
+  textDelay: 0.03
 --- !u!114 &790463948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1934,11 +1933,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823314995}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: -0.25, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: -0.2, y: -0.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 150356283}
+  m_Children: []
   m_Father: {fileID: 1607135108}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2018,6 +2016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaad5dde548fa4409a8cda67b6cc040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 6
 --- !u!61 &823315000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2094,11 +2093,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959218795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -0.25, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: 0.2, y: -0.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1777203575}
+  m_Children: []
   m_Father: {fileID: 1607135108}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2178,6 +2176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaad5dde548fa4409a8cda67b6cc040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 7
 --- !u!61 &959218800
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2250,17 +2249,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002088920}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 425120248}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1607135108}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.265, y: 0}
+  m_AnchoredPosition: {x: 0.348, y: 0.437}
   m_SizeDelta: {x: 0.27, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002088922
@@ -2292,8 +2291,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255360
-  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2316,8 +2315,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2550,11 +2549,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183272041}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0.65, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: -0.2, y: 0.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 510074439}
+  m_Children: []
   m_Father: {fileID: 1607135108}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2634,6 +2632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaad5dde548fa4409a8cda67b6cc040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
 --- !u!61 &1183272046
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2710,11 +2709,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240945400}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: 0.2, y: -0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2111241080}
+  m_Children: []
   m_Father: {fileID: 1607135108}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2794,6 +2792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaad5dde548fa4409a8cda67b6cc040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 5
 --- !u!61 &1240945405
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2870,11 +2869,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241924474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -0.55, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: 0.2, y: -0.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1910544046}
+  m_Children: []
   m_Father: {fileID: 1607135108}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2954,6 +2952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaad5dde548fa4409a8cda67b6cc040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 9
 --- !u!61 &1241924479
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3025,7 +3024,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421936197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: -0.32, z: 0}
+  m_LocalPosition: {x: -1, y: -0.28, z: 0}
   m_LocalScale: {x: 0.11, y: 0.11, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3056,7 +3055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444791407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26868168, y: -0.06785671, z: -9.901492}
+  m_LocalPosition: {x: 0, y: 0, z: -9.901492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3096,11 +3095,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508911386}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.35, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: 0.2, y: 0.31, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 25155421}
+  m_Children: []
   m_Father: {fileID: 1607135108}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3180,6 +3178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaad5dde548fa4409a8cda67b6cc040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 3
 --- !u!61 &1508911391
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3318,6 +3317,16 @@ Transform:
   - {fileID: 959218796}
   - {fileID: 2035718615}
   - {fileID: 1241924475}
+  - {fileID: 1002088921}
+  - {fileID: 510074439}
+  - {fileID: 2123637574}
+  - {fileID: 25155421}
+  - {fileID: 132102297}
+  - {fileID: 2111241080}
+  - {fileID: 150356283}
+  - {fileID: 1777203575}
+  - {fileID: 420249595}
+  - {fileID: 1910544046}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3382,12 +3391,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 959218796}
-  m_RootOrder: 0
+  m_Father: {fileID: 1607135108}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.265, y: 0}
+  m_AnchoredPosition: {x: 0.2, y: -0.33}
   m_SizeDelta: {x: 0.27, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1777203576
@@ -3437,14 +3446,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3635,12 +3644,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1241924475}
-  m_RootOrder: 0
+  m_Father: {fileID: 1607135108}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.28, y: 0}
+  m_AnchoredPosition: {x: 0.2, y: -0.65}
   m_SizeDelta: {x: 0.29, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1910544047
@@ -3690,14 +3699,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3824,9 +3833,9 @@ MonoBehaviour:
   spiritPrefab: {fileID: 8176770423405531543, guid: 63376eb84babd874eb81fb68ba45641e, type: 3}
   traits:
   - sprite: {fileID: 21300000, guid: 2db302a54dc26a74c9bed703ea0d4ad7, type: 3}
-    realName: 'Cap Tane '
+    realName: Cap Tane
     description: Pirate
-    demise: 'Got too silly and played Twister with a Sea Monster '
+    demise: Got too silly and played Twister with a Sea Monster.
     dialog:
     - "Yarr! \u2019Tis not mine ship, whereth am-eth I-eth?"
     - Use context clues, captain.
@@ -3835,7 +3844,7 @@ MonoBehaviour:
   - sprite: {fileID: 21300000, guid: a246d47072c57c24b91dda5087c8c4fd, type: 3}
     realName: Dr. Noseallot
     description: Psychologist
-    demise: Tried to hard at poker
+    demise: Tried to hard at poker.
     dialog:
     - "Tell me, how\u2019s this job working out for you?"
     - It has its ups and downs.
@@ -3844,16 +3853,17 @@ MonoBehaviour:
   - sprite: {fileID: 21300000, guid: ac8b7e3fb911e58488da6e0209c6cc76, type: 3}
     realName: Caul Ector
     description: Antique Dealer
-    demise: Dead trying to recover a stolen old coin
+    demise: Died trying to recover an old stolen coin.
     dialog:
-    - "This elevator\u2026haah\u2026would sell for\u2026so\u2026much\u2026haah, haah\u2026!"
+    - "This elevator\u2026 haah\u2026 would sell for\u2026 so\u2026 much\u2026 haah,
+      haah\u2026!"
     - Dude. Calm down.
     - Ooh, I see more clients there!
     - "Young boy, I could sell you instead\u2026"
   - sprite: {fileID: 21300000, guid: 0f88453f864e4cc48b88aa9c1d0077f5, type: 3}
     realName: Terry Bull
-    description: Pro League of Legends Player
-    demise: Drank too much G-Fuel
+    description: Pro League of Legends player.
+    demise: Drank too much G-Fuel.
     dialog:
     - "Wh0\u2019s y0ur ma1n, br0?"
     - Mario.
@@ -3862,7 +3872,7 @@ MonoBehaviour:
   - sprite: {fileID: 21300000, guid: acf0def864ee66e45b60b34ec427b46b, type: 3}
     realName: Gene Yuss
     description: Nerd
-    demise: Car accident
+    demise: Car accident.
     dialog:
     - "Ermmm, imagine failing a math test\u2026 could never be my shrewd self."
     - "At least I\u2019ve touched grass before."
@@ -3902,7 +3912,7 @@ RectTransform:
   m_GameObject: {fileID: 2004630591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 97342009}
@@ -3910,8 +3920,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.02}
+  m_SizeDelta: {x: 1, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2004630593
 MonoBehaviour:
@@ -4076,11 +4086,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035718614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: -0.55, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: -0.2, y: -0.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 420249595}
+  m_Children: []
   m_Father: {fileID: 1607135108}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4160,6 +4169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaad5dde548fa4409a8cda67b6cc040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 8
 --- !u!61 &2035718619
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4234,7 +4244,7 @@ RectTransform:
   m_GameObject: {fileID: 2067010594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 790463946}
@@ -4242,8 +4252,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.02}
+  m_SizeDelta: {x: 1, y: 0.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067010596
 MonoBehaviour:
@@ -4551,12 +4561,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1240945401}
-  m_RootOrder: 0
+  m_Father: {fileID: 1607135108}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.265, y: 0}
+  m_AnchoredPosition: {x: 0.2, y: -0.01}
   m_SizeDelta: {x: 0.27, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2111241081
@@ -4606,14 +4616,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4723,12 +4733,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 218615550}
-  m_RootOrder: 0
+  m_Father: {fileID: 1607135108}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.265, y: 0}
+  m_AnchoredPosition: {x: -0.19999999, y: 0.31}
   m_SizeDelta: {x: 0.27, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123637575
@@ -4778,14 +4788,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.8
+  m_fontSizeBase: 0.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
