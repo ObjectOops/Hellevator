@@ -117,4 +117,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveLerpSpeed: 0.5
   fadeLerpSpeed: 0.25
-  lerpDelay: 0
+  lerpDelay: 0.1

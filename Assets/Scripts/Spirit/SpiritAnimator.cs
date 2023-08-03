@@ -9,10 +9,15 @@ public class SpiritAnimator : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    private void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Maybe move this back down?
+    }
+
+    private void Start()
+    {
+        // Intentionally empty.
     }
 
     public IEnumerator MoveTo(Transform posScale)
@@ -44,11 +49,11 @@ public class SpiritAnimator : MonoBehaviour
     public IEnumerator FadeOut()
     {
         // Alpha value 0 --> transparent.
-        Color transparent = new(255, 255, 255, 1);
-        Color opaque = new(255, 255, 255, 0);
+        Color opaque = new(255, 255, 255, 1);
+        Color transparent = new(255, 255, 255, 0);
         for (float t = 0f; t <= 1f; t += fadeLerpSpeed * Time.deltaTime)
         {
-            spriteRenderer.color = Color.Lerp(transparent, opaque, t);
+            spriteRenderer.color = Color.Lerp(opaque, transparent, t);
             yield return new WaitForSeconds(lerpDelay);
         }
     }

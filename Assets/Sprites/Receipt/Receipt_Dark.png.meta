@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a246d47072c57c24b91dda5087c8c4fd
+guid: 1509da6be87721348887968ad6e5962a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Receipt_Dark_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 104
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a4a0910b0f44b4895867bda93c4ca9
+      internalID: -2138050471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Receipt_Dark_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 360
+        width: 104
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78abf55cb2e0674bb086eedd836d5f7
+      internalID: 1353597153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Receipt_Dark_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 360
+        width: 104
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a2dd585d49eca40a4cade7c2ead695
+      internalID: 142546493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Receipt_Dark_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 104
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd98611e3005eb4497d71eeb93d126d
+      internalID: -741045593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Receipt_Dark_4
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 180
+        width: 104
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c61d82cfe5299a48a22ce1ebd38b04a
+      internalID: -1991089657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Receipt_Dark_5
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 180
+        width: 104
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da3aaaec436e094198b88004e1917f6
+      internalID: 2114843184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +264,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Receipt_Dark_0: -2138050471
+      Receipt_Dark_1: 1353597153
+      Receipt_Dark_2: 142546493
+      Receipt_Dark_3: -741045593
+      Receipt_Dark_4: -1991089657
+      Receipt_Dark_5: 2114843184
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
