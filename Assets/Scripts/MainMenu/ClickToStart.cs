@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ClickToStart : MonoBehaviour
 {
-    public string sceneName;
-    public void OnMouseUp()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
-    }
+	public string sceneName;
+	public void OnMouseUp()
+	{
+		UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+	}
 
 }
