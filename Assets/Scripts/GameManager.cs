@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
 	public void SetTrust(int newTrust)
     {
 		trust = newTrust;
-		// Update UI.
 		TestTrust();
 		UIManager.instance.SetTrust(trust);
     }
