@@ -31,9 +31,9 @@ public class Spirit : MonoBehaviour
         yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[1]); // Spirit moves in.
         yield return ElevatorAnimator.instance.Close();
         Debug.Log("Speak 1", this);
-        yield return Dialog.spiritBox.Speak(dialog[0]); // Spirit speaks.
+        yield return Dialog.spiritBox.Speak(realName + "\n\n" + dialog[0]); // Spirit speaks.
         Debug.Log("Speak 2", this);
-        yield return Dialog.playerBox.Speak(dialog[1]); // Player responds.
+        yield return Dialog.playerBox.Speak("Dante\n\n" + dialog[1]); // Player responds.
 
         Debug.Log("Animations suceeded.", this);
         yield return new WaitForSeconds(greetingSequenceEndDelay);

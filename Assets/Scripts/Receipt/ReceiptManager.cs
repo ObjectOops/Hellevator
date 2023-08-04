@@ -67,11 +67,11 @@ public class ReceiptManager : MonoBehaviour
 		receipt.finePrint += 
 $@"{SpiritManager.instance.activeSpirit.realName}
 > {SpiritManager.instance.activeSpirit.description}
-> {SpiritManager.instance.activeSpirit.demise}
+> {"Death: " + SpiritManager.instance.activeSpirit.demise}
 ---------------------";
 		foreach (string crime in crimesCommitted)
 		{
-			receipt.finePrint += $"\n{crime}";
+			receipt.finePrint += $"\n{"Crime: " + crime}";
 		}
 
 		activeReceipt = receipt;
