@@ -5,11 +5,8 @@ using TMPro;
 
 public class PressToStart : MonoBehaviour
 {
-    [SerializeField] private List<Color> gradient;
-    [SerializeField] private TextMeshPro textMesh;
-
-    void Start()
+    private void OnMouseDown()
     {
-        
+        SceneManager.instance.Load("game");
     }
 }

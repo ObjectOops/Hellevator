@@ -10,7 +10,7 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private List<string> names;
     [SerializeField] [Scene] private List<string> scenes;
 
-    private Dictionary<string, string> map;
+    private Dictionary<string, string> map = new();
 
     private void Start()
     {
@@ -28,6 +28,6 @@ public class SceneManager : MonoBehaviour
 
     public void Load(string shortName)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(shortName);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(map[shortName]);
     }
 }
