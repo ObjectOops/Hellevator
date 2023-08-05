@@ -5,8 +5,16 @@ using TMPro;
 
 public class PressToStart : MonoBehaviour
 {
+    private void Start()
+    {
+        AudioManager.instance.PlayMusic("Intro Theme");
+    }
+
     private void OnMouseDown()
     {
-        SceneManager.instance.Load("game");
+        if (!UIManager.instance.paused)
+        {
+            SceneManager.instance.Load("game");
+        }
     }
 }

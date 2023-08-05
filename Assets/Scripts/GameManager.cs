@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
 		Application.targetFrameRate = 30;
-		Time.timeScale = 3; // Testing only!
+		// Time.timeScale = 3; // Testing only!
 		instance = this;
     }
 
