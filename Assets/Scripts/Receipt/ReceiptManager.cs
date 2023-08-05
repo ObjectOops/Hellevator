@@ -15,7 +15,7 @@ public class ReceiptManager : MonoBehaviour
 
 	[HideInInspector] public Receipt activeReceipt;
 
-	public SpriteRenderer[] levelBackground;
+	public SpriteRenderer[] levelBackground; // note
 
 	private void Awake()
 	{

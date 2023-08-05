@@ -26,7 +26,7 @@ public class Button : MonoBehaviour
 			buttonAnimator.Press();
 			StartCoroutine(ReceiptManager.instance.activeReceipt.Judge(level));
 			levelSelected = true;
-			Color swap = ReceiptManager.instance.levelBackground[level].color;
+			Color swap = ReceiptManager.instance.levelBackground[level].color; // notes
 			swap.a = 1;
 			ReceiptManager.instance.levelBackground[level].color = swap;
             //Instantiate(ReceiptManager.instance.levelBackground[level]);

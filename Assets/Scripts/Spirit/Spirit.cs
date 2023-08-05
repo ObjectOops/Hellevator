@@ -54,16 +54,16 @@ public class Spirit : MonoBehaviour
         // yield return ElevatorAnimator.instance.Shake();
     }
 
-    public IEnumerator DepartureSequence(int buttonLevel)
+    public IEnumerator DepartureSequence(int buttonLevel) // note
     {
         // yield return ElevatorAnimator.instance.Shake();
         yield return ElevatorAnimator.instance.Open();
         yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[3]);
         yield return spiritAnimator.FadeOut();
         yield return ElevatorAnimator.instance.Close();
-        Color swap = ReceiptManager.instance.levelBackground[buttonLevel].color;
-        swap.a = 0;
-        ReceiptManager.instance.levelBackground[buttonLevel].color = swap;
+        Color swap = ReceiptManager.instance.levelBackground[buttonLevel].color; // note
+        swap.a = 0; // note
+        ReceiptManager.instance.levelBackground[buttonLevel].color = swap; // note
         Destroy(gameObject);
     }
 }
