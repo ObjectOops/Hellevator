@@ -6,31 +6,37 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
 	public static AudioManager instance;
+	public static readonly string[] GROUP_NAMES = { "Music", "SFX", "Dialog" };
+	private static readonly float scale = 20f;
 
-	[SerializeField] private List<AudioName> audioNames;
+	[SerializeField] private AudioName[] audioNames;
 	[SerializeField] private AudioSource musicComponent, sfxComponent, dialogComponent;
 	[SerializeField] private AudioMixer mixer;
 
-	[HideInInspector] public Dictionary<string, AudioClip> audioMap = new();
+	private readonly Dictionary<string, AudioClip> audioMap = new();
 
-	private void Start()
+	private void Awake()
 	{
 		instance = this;
-		for (int i = 0; i < audioNames.Count; ++i)
+		for (int i = 0; i < audioNames.Length; ++i)
 		{
 			audioMap.Add(audioNames[i].name, audioNames[i].clip);
 		}
-		AdjustVolume("Music", PlayerPrefs.GetFloat("Music", 1f));
-		AdjustVolume("SFX", PlayerPrefs.GetFloat("SFX", 1f));
-		AdjustVolume("Dialog", PlayerPrefs.GetFloat("Dialog", 1f));
+	}
+
+	public void Start() // May be called by the GameManager for initialization purposes.
+	{
+		AdjustVolume(GROUP_NAMES[0], GetVolume(GROUP_NAMES[0]));
+		AdjustVolume(GROUP_NAMES[1], GetVolume(GROUP_NAMES[1]));
+		AdjustVolume(GROUP_NAMES[2], GetVolume(GROUP_NAMES[2]));
 	}
 
 	public void PlayMusic(string name)
-    {
+	{
 		musicComponent.Stop();
 		musicComponent.clip = audioMap[name];
 		musicComponent.Play();
-    }
+	}
 
 	public void PlaySFX(string name, float volumeScale = 1)
 	{
@@ -38,21 +44,25 @@ public class AudioManager : MonoBehaviour
 	}
 
 	public void PlayDialog(AudioClip voiceover, float volumeScale = 1)
-    {
+	{
 		dialogComponent.PlayOneShot(voiceover, volumeScale);
-    }
+	}
 
 	public void AdjustVolume(string groupName, float volume)
 	{
 		// Convert linear values to decibels, which are on a logarithmic scale.
-		mixer.SetFloat(groupName, Mathf.Log10(volume) * 20);
+		mixer.SetFloat(groupName, Mathf.Log10(volume) * scale);
 		PlayerPrefs.SetFloat(groupName, volume);
 	}
 
+	public float GetVolume(string groupName)
+	{
+		return PlayerPrefs.GetFloat(groupName, 1f);
+	}
 
 	[System.Serializable] private struct AudioName
-    {
+	{
 		public string name;
 		public AudioClip clip;
-    }
+	}
 }

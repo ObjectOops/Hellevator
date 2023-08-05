@@ -4,31 +4,41 @@ using UnityEngine;
 
 public class VolumeAdjustButton : MonoBehaviour
 {
-    private static List<VolumeAdjustButton> buttons = new();
+	private static List<VolumeAdjustButton> buttons = new();
 
-    [SerializeField] private string mixerGroup;
-    [SerializeField] private float volumeLevel;
+	[SerializeField] private string mixerGroup;
+	[SerializeField] private float volumeLevel;
 
-    private Animator animator;
+	private Animator animator;
 
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-        buttons.Add(this);
-    }
+	private void Awake()
+	{
+		animator = GetComponent<Animator>();
+		buttons.Add(this);
+	}
 
-    private void OnMouseDown()
-    {
-        /*Debug.Log("Adjusting " + volumeLevel);
-        AudioManager.instance.AdjustVolume(mixerGroup, volumeLevel);
-        foreach (VolumeAdjustButton button in buttons)
-        {
-            if (button != this)
-            {
-                button.animator.ResetTrigger("press");
-            }
-        }
-        animator.SetTrigger("press");*/
-        animator.SetTrigger("press");
-    }
+	public void OnEnable()
+	{
+		if ((mixerGroup == AudioManager.GROUP_NAMES[0] && volumeLevel == AudioManager.instance.GetVolume(mixerGroup)) ||
+			(mixerGroup == AudioManager.GROUP_NAMES[1] && volumeLevel == AudioManager.instance.GetVolume(mixerGroup)) ||
+			(mixerGroup == AudioManager.GROUP_NAMES[2] && volumeLevel == AudioManager.instance.GetVolume(mixerGroup)))
+		{
+			animator.SetTrigger("press");
+		}
+	}
+
+	private void OnMouseDown()
+	{
+		AudioManager.instance.AdjustVolume(mixerGroup, volumeLevel);
+		foreach (VolumeAdjustButton button in buttons)
+		{
+			if (button.transform.parent == this.transform.parent)
+			{
+				button.animator.ResetTrigger("press");
+				button.animator.SetTrigger("unpress");
+			}
+		}
+		animator.ResetTrigger("unpress");
+		animator.SetTrigger("press");
+	}
 }

@@ -5,45 +5,42 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
+	public static UIManager instance;
 
-    [SerializeField] private TextMeshPro day, trust;
-    [SerializeField] private GameObject pauseMenu;
+	[SerializeField] private TextMeshPro day, trust;
+	[SerializeField] private GameObject pauseMenu;
 
-    [HideInInspector] public bool paused = false;
+	[HideInInspector] public bool paused = false;
 
-    private void Awake()
-    {
-        instance = this;
+	private void Awake()
+	{
+		instance = this;
 
-        // Ensures that the pause menu is hidden and resolves an odd behavior where buttons are unresponsive on initial load.
-        pauseMenu.SetActive(true);
-        pauseMenu.SetActive(false);
-    }
+		// Ensures that the pause menu is hidden and resolves an odd behavior where buttons are unresponsive on initial load.
+		pauseMenu.SetActive(false);
+	}
 
-    public void SetDay(int n)
-    {
-        day.text = $"Day: {n}";
-    }
+	public void SetDay(int n)
+	{
+		day.text = $"Day: {n}";
+	}
 
-    public void SetTrust(int n)
-    {
-        trust.text = $"Trust: {n}";
-    }
+	public void SetTrust(int n)
+	{
+		trust.text = $"Trust: {n}";
+	}
 
-    public void PauseGame()
-    {
-        Debug.Log("Paused", this);
-        Time.timeScale = 0f;
-        pauseMenu.SetActive(true);
-        paused = true;
-    }
+	public void PauseGame()
+	{
+		Time.timeScale = 0f;
+		pauseMenu.SetActive(true);
+		paused = true;
+	}
 
-    public void ResumeGame()
-    {
-        Debug.Log("Unpaused", this);
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        paused = false;
-    }
+	public void ResumeGame()
+	{
+		pauseMenu.SetActive(false);
+		Time.timeScale = 1f;
+		paused = false;
+	}
 }
