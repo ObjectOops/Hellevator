@@ -32,7 +32,7 @@ public class Receipt : MonoBehaviour
 		bool correct = buttonLevel == level;
 		Debug.Log("Button vs. Level: " + buttonLevel + ' ' + level, this);
         yield return SpiritManager.instance.activeSpirit.JudgementSequence(correct);
-        yield return SpiritManager.instance.activeSpirit.DepartureSequence(); //
+        yield return SpiritManager.instance.activeSpirit.DepartureSequence(); // Note here!
 
 		GameManager.instance.SetTrust(GameManager.instance.trust + (correct ? trustGain : trustLose));
         yield return GameManager.instance.NextSpirit();
