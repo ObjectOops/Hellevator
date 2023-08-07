@@ -12,15 +12,10 @@ public class ReceiptAnimator : MonoBehaviour
 
 	private bool isPrinting;
 
-    private void Awake()
-    {
+	private void Awake()
+	{
 		animator = GetComponent<Animator>();
 		textMesh = transform.GetComponentInChildren<TextMeshPro>();        
-    }
-
-    private void Start()
-	{
-		// Intentionally empty.
 	}
 
 	public void Print(string text)
@@ -50,19 +45,19 @@ public class ReceiptAnimator : MonoBehaviour
 		}
 	}
 
-	public void Trash()
+	public void Trash() // Called by animation event.
 	{
 		Destroy(gameObject);
 	}
 
 	[ContextMenu("Test Print Animation")]
-	public void TestPrint()
+	private void TestPrint()
 	{
 		Print(textMesh.text);
 	}
 
 	[ContextMenu("Test Discard Animation")]
-	public void TestDiscard()
+	private void TestDiscard()
 	{
 		Discard();
 	}

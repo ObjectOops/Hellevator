@@ -4,52 +4,44 @@ using UnityEngine;
 
 public class Dialog : MonoBehaviour
 {
-    public static Dialog spiritBox, playerBox;
+	public static Dialog spiritBox, playerBox, mephiBox;
 
-    [SerializeField] private bool spirit;
+	public bool spirit, mephi;
 
-    private DialogAnimator dialogAnimator;
+	private DialogAnimator dialogAnimator;
 
-    private void Awake()
-    {
-        dialogAnimator = GetComponent<DialogAnimator>();
-        if (spirit)
-        {
-            spiritBox = this;
-        }
-        else
-        {
-            playerBox = this;
-        }
-        gameObject.SetActive(false);
-    }
+	private void Awake()
+	{
+		dialogAnimator = GetComponent<DialogAnimator>();
+		if (mephi)
+		{
+			mephiBox = this;
+		}
+		else if (spirit)
+		{
+			spiritBox = this;
+		}
+		else
+		{
+			playerBox = this;
+		}
+	}
 
-    private void Start()
-    {
-        // Intentionally empty.
-    }
+	public IEnumerator Speak(string speech)
+	{
+		dialogAnimator.Blurb();
+		yield return dialogAnimator.LinearIn(speech);
+	}
 
-    public IEnumerator Speak(string speech)
-    {
-        gameObject.SetActive(true);
-        yield return dialogAnimator.LinearIn(speech);
-    }
+	[ContextMenu("Test End")]
+	public void End()
+	{
+		dialogAnimator.Out();
+	}
 
-    public static void EndAll()
-    {
-        spiritBox.gameObject.SetActive(false);
-        playerBox.gameObject.SetActive(false);
-    }
-
-    [ContextMenu("Test Speak")]
-    public void TestSpeak()
-    {
-        StartCoroutine(Speak("Test."));
-    }
-
-    [ContextMenu("Test End All")]
-    public void TestEndAll()
-    {
-        EndAll();
-    }
+	[ContextMenu("Test Speak")]
+	private void TestSpeak()
+	{
+		StartCoroutine(Speak("Test."));
+	}
 }

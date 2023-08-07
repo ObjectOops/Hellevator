@@ -4,66 +4,67 @@ using UnityEngine;
 
 public class Spirit : MonoBehaviour
 {
-    [SerializeField] private float greetingSequenceEndDelay;
+	[SerializeField] private float greetingSequenceEndDelay, judgementSequenceEndDelay, departureSequenceEndDelay;
 	
 	[HideInInspector] public string realName, description, demise;
-	[HideInInspector] public List<string> dialog;
+	[HideInInspector] public string[] dialog;
 
 	private SpiritAnimator spiritAnimator;
 
-    private void Start()
-    {
-        spiritAnimator = GetComponent<SpiritAnimator>();
-    }
+	private void Awake()
+	{
+		spiritAnimator = GetComponent<SpiritAnimator>();
+	}
 
-    /*
-     * IMPORTANT
-     * The IEnumerator must be passed down the hierarchy all the way to Judge in the active Receipt or GameManager's Start!
-     */
+	/*
+	 * IMPORTANT
+	 * The IEnumerator must be passed down the hierarchy all the way to Judge in the active Receipt or GameManager's Start!
+	 */
 
-    public IEnumerator GreetingSequence()
-    {
-        Debug.Log("Performing GreetingSequence animations.", this);
-        yield return ElevatorAnimator.instance.Open();
-        Debug.Log("Elevator opening animation complete.", this);
-        yield return spiritAnimator.FadeIn(); // Spirit fades in.
-        Debug.Log("Spirit fade in animation complete.", this);
-        yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[1]); // Spirit moves in.
-        yield return ElevatorAnimator.instance.Close();
-        Debug.Log("Speak 1", this);
-        yield return Dialog.spiritBox.Speak(realName + "\n\n" + dialog[0]); // Spirit speaks.
-        Debug.Log("Speak 2", this);
-        yield return Dialog.playerBox.Speak("Dante\n\n" + dialog[1]); // Player responds.
+	public IEnumerator GreetingSequence()
+	{
+		yield return ElevatorAnimator.instance.Shake();
+		yield return ElevatorAnimator.instance.Open(0);
+		spiritAnimator.FloatSpawn();
+		yield return spiritAnimator.FadeIn();
+		spiritAnimator.FloatStop();
+		yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[1]);
+		spiritAnimator.FloatMovedIn();
+		yield return ElevatorAnimator.instance.Close(0);
+		yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[0]}"); // Spirit speaks.
+		yield return Dialog.playerBox.Speak($"\n{GameManager.instance.playerName}\n\n{dialog[1]}"); // Player responds.
 
-        Debug.Log("Animations suceeded.", this);
-        yield return new WaitForSeconds(greetingSequenceEndDelay);
-        Dialog.EndAll();
-    }
+		yield return new WaitForSeconds(greetingSequenceEndDelay);
+		Dialog.spiritBox.End();
+		Dialog.playerBox.End();
+	}
 
-    public IEnumerator JudgementSequence(bool correct)
-    {
-        if (correct)
-        {
-            yield return Dialog.spiritBox.Speak(dialog[2]);
-        }
-        else
-        {
-            yield return Dialog.spiritBox.Speak(dialog[3]);
-        }
-        yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[2]);
-        // yield return ElevatorAnimator.instance.Shake();
-    }
+	public IEnumerator JudgementSequence(bool correct)
+	{
+		if (correct)
+		{
+			yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[2]}");
+		}
+		else
+		{
+			yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[3]}");
+		}
 
-    public IEnumerator DepartureSequence(int buttonLevel) // note
-    {
-        // yield return ElevatorAnimator.instance.Shake();
-        yield return ElevatorAnimator.instance.Open();
-        yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[3]);
-        yield return spiritAnimator.FadeOut();
-        yield return ElevatorAnimator.instance.Close();
-        Color swap = ReceiptManager.instance.levelBackground[buttonLevel].color; // note
-        swap.a = 0; // note
-        ReceiptManager.instance.levelBackground[buttonLevel].color = swap; // note
-        Destroy(gameObject);
-    }
+		yield return new WaitForSeconds(judgementSequenceEndDelay);
+	}
+
+	public IEnumerator DepartureSequence(int level)
+	{
+		Dialog.spiritBox.End();
+		yield return ElevatorAnimator.instance.Shake();
+		yield return ElevatorAnimator.instance.Open(level);
+		spiritAnimator.FloatStop();
+		yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[2]);
+		spiritAnimator.FloatSpawn();
+		yield return spiritAnimator.FadeOut();
+		yield return ElevatorAnimator.instance.Close(level);
+		Destroy(gameObject);
+
+		yield return new WaitForSeconds(departureSequenceEndDelay);
+	}
 }

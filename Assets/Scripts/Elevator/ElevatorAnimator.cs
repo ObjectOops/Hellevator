@@ -5,62 +5,64 @@ using UnityEngine;
 public class ElevatorAnimator : MonoBehaviour
 {
 	public static ElevatorAnimator instance;
-	public static bool opened;
 
-	[SerializeField] private new Camera camera;
-	[SerializeField] private float shortDelay, cameraShake, cameraShakeDelay;
-	[SerializeField] private int cameraShakeIterations;
+	[SerializeField] private Animator cameraAnimator;
+	[SerializeField] private float waitDelay, elevatorTransitDelay;
+	[SerializeField] private GameObject[] floors;
 
 	private Animator animator;
+	private bool opened = false;
 
 	private void Awake()
 	{
 		instance = this;
 		animator = GetComponent<Animator>();
+		if (floors.Length != 10)
+		{
+			Debug.LogWarning("The number of floors must be ten - one for the lobby and the rest for each of the nine levels.", this);
+		}
+		foreach (GameObject floor in floors)
+		{
+			floor.SetActive(false);
+		}
+		floors[0].SetActive(true);
 	}
 
-	private void Start()
+	public IEnumerator Open(int level)
 	{
-		// Intentionally empty.
-	}
-
-	public IEnumerator Open()
-    {
+		floors[level].SetActive(true);
 		animator.SetTrigger("open");
 		while (!opened)
-        {
-			yield return new WaitForSeconds(shortDelay);
-        }
-    }
+		{
+			yield return new WaitForSeconds(waitDelay);
+		}
+	}
 
-	public IEnumerator Close()
+	public IEnumerator Close(int level)
 	{
 		animator.SetTrigger("close");
 		while (opened)
 		{
-			yield return new WaitForSeconds(shortDelay);
+			yield return new WaitForSeconds(waitDelay);
 		}
+		floors[level].SetActive(false);
 	}
 
 	public IEnumerator Shake()
-    {
-		Vector2 cameraPosOriginal = camera.transform.position;
-		for (int i = 0; i < cameraShakeIterations; ++i)
-        {
-			camera.transform.position = cameraPosOriginal + 
-				new Vector2(Random.Range(0, cameraShake), Random.Range(0, cameraShake));
-			yield return new WaitForSeconds(cameraShakeDelay);
-        }
-		camera.transform.position = cameraPosOriginal;
-    }
+	{
+		yield return new WaitForSeconds(elevatorTransitDelay);
+		cameraAnimator.SetTrigger("shake");
+		cameraAnimator.SetTrigger("stop");
+		yield return new WaitForSeconds(elevatorTransitDelay);
+	}
 
 	public void Closed()
-    {
+	{
 		opened = false;
-    }
+	}
 
 	public void Opened()
-    {
+	{
 		opened = true;
-    }
+	}
 }

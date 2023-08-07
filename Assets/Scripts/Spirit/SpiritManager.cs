@@ -7,8 +7,11 @@ public class SpiritManager : MonoBehaviour
 	public static SpiritManager instance;
 
 	[SerializeField] private GameObject spiritPrefab;
-	[SerializeField] private List<Trait> traits;
-	public List<Transform> movementPoints;
+	[SerializeField] private Trait[] traits;
+	public Transform[] movementPoints;
+
+	[Header("Additional Feature Parameters")]
+	public string[] mephiDialogSuccess, mephiDialogFail, mephiIntermezzo;
 
 	[HideInInspector] public Spirit activeSpirit;
 
@@ -19,7 +22,6 @@ public class SpiritManager : MonoBehaviour
 
 	public IEnumerator GenerateSpirit(int day, int index)
 	{
-		Debug.Log("Setting instantiated spirit attributes.", this);
 		// `day` starts from 1.
 		Trait trait = traits[(day - 1) * GameManager.instance.limit + index];
 		GameObject spiritObject = Instantiate(spiritPrefab);
@@ -35,15 +37,15 @@ public class SpiritManager : MonoBehaviour
 	}
 
 	public void TransferTransform(Spirit s, Transform t)
-    {
+	{
 		s.transform.SetPositionAndRotation(t.position, t.rotation);
 		s.transform.localScale = t.localScale;
-    }
+	}
 
 	[System.Serializable] private struct Trait
 	{
 		public Sprite sprite;
 		public string realName, description, demise;
-		public List<string> dialog;
+		public string[] dialog;
 	}
 }

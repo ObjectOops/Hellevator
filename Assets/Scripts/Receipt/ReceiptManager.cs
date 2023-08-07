@@ -15,15 +15,9 @@ public class ReceiptManager : MonoBehaviour
 
 	[HideInInspector] public Receipt activeReceipt;
 
-	public SpriteRenderer[] levelBackground; // note
-
 	private void Awake()
 	{
 		instance = this;
-	}
-
-	private void Start()
-	{
 		if (crimeCategories.Count != 9)
 		{
 			Debug.LogWarning("Crime category count does not equal nine.", this);
@@ -38,10 +32,11 @@ public class ReceiptManager : MonoBehaviour
 		receipt.transform.localScale = receiptSpawn.localScale;
 
 		// [2, 10) --> for each of the nine levels *with crimes*.
-		int rand1 = Random.Range(1, 9), rand2 = Random.Range(1, 9);
+		int lowerBound = 1, upperBound = 9;
+		int rand1 = Random.Range(lowerBound, upperBound), rand2 = Random.Range(lowerBound, upperBound);
 		while (rand1 == rand2)
 		{
-			rand2 = Random.Range(1, 9);
+			rand2 = Random.Range(lowerBound, upperBound);
 		}
 		CrimeCategory minorLevel = crimeCategories[rand1], majorLevel = crimeCategories[rand2];
 		List<string> crimesCommitted = new();
@@ -52,8 +47,14 @@ public class ReceiptManager : MonoBehaviour
 		if (isBoss)
 		{
 			// Two major crimes.
-			crimesCommitted.Add(majorLevel.crimes[Random.Range(0, majorLevel.crimes.Count)]);
-			crimesCommitted.Add(majorLevel.crimes[Random.Range(0, majorLevel.crimes.Count)]);
+			string first = majorLevel.crimes[Random.Range(0, majorLevel.crimes.Count)];
+			string second = majorLevel.crimes[Random.Range(0, majorLevel.crimes.Count)];
+			while (first == second)
+			{
+				second = majorLevel.crimes[Random.Range(0, majorLevel.crimes.Count)];
+			}
+			crimesCommitted.Add(first);
+			crimesCommitted.Add(second);
 			receipt.level = majorLevel.level;
 		}
 
@@ -82,7 +83,7 @@ $@"{SpiritManager.instance.activeSpirit.realName}
 
 	// May need under some circumstances.
 	private string BreakString(string str)
-    {
+	{
 		string result = "";
 		for (int i = 0; i < str.Length; ++i)
 		{
