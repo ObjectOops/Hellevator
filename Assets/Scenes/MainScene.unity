@@ -3079,6 +3079,7 @@ MonoBehaviour:
   spiritPrefab: {fileID: 8176770423405531543, guid: 63376eb84babd874eb81fb68ba45641e, type: 3}
   traits:
   - sprite: {fileID: -879719854, guid: 2db302a54dc26a74c9bed703ea0d4ad7, type: 3}
+    talkingAnimation: {fileID: 7400000, guid: f76b11debed22854ab361f01f85ab9de, type: 2}
     realName: Cap Tane
     description: Pirate
     demise: Got too silly and played Twister with a Sea Monster.
@@ -3088,6 +3089,7 @@ MonoBehaviour:
     - "Yarr, this sounds-eth about-eth right\u2026 TBH."
     - "Arr, ye be mistaken... use context clues next time\u2026 -eth."
   - sprite: {fileID: 2108830860, guid: a246d47072c57c24b91dda5087c8c4fd, type: 3}
+    talkingAnimation: {fileID: 0}
     realName: Dr. Noseallot
     description: Psychologist
     demise: Tried to hard at poker.
@@ -3097,6 +3099,7 @@ MonoBehaviour:
     - "Oh yes, people on this floor have so many issues\u2026 I could fix them\u2026!"
     - "Agh\u2026 everyone here is so mentally stable! NOOOO!"
   - sprite: {fileID: 1041629553, guid: ac8b7e3fb911e58488da6e0209c6cc76, type: 3}
+    talkingAnimation: {fileID: 0}
     realName: Caul Ector
     description: Antique Dealer
     demise: Died trying to recover an old stolen coin.
@@ -3107,6 +3110,7 @@ MonoBehaviour:
     - Ooh, I see more clients there!
     - "Young boy, I could sell you instead\u2026"
   - sprite: {fileID: 975159688, guid: 0f88453f864e4cc48b88aa9c1d0077f5, type: 3}
+    talkingAnimation: {fileID: 0}
     realName: Terry Bull
     description: Pro League of Legends player.
     demise: Drank too much G-Fuel.
@@ -3116,6 +3120,7 @@ MonoBehaviour:
     - Y3AHHH! Wa1t, can w3 qu3u3 anoth3r?
     - BRUH, ur3 thr0w1ng my 3L0!
   - sprite: {fileID: -275998051, guid: acf0def864ee66e45b60b34ec427b46b, type: 3}
+    talkingAnimation: {fileID: 0}
     realName: Gene Yuss
     description: Nerd
     demise: Car accident.

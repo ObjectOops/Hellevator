@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8176770423405531539}
   - component: {fileID: 8176770423405531536}
   - component: {fileID: 1549817102907909140}
+  - component: {fileID: 5388509482730391166}
   m_Layer: 0
   m_Name: Spirit
   m_TagString: Untagged
@@ -102,7 +103,6 @@ MonoBehaviour:
   greetingSequenceEndDelay: 1
   judgementSequenceEndDelay: 1
   departureSequenceEndDelay: 1
-  playerName: Dante
   realName: 
   description: 
   demise: 
@@ -122,6 +122,7 @@ MonoBehaviour:
   moveLerpSpeed: 1.5
   fadeLerpSpeed: 1
   lerpDelay: 0
+  talkingAnimation: {fileID: 0}
 --- !u!95 &1549817102907909140
 Animator:
   serializedVersion: 5
@@ -143,3 +144,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &5388509482730391166
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8176770423405531543}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: f76b11debed22854ab361f01f85ab9de, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

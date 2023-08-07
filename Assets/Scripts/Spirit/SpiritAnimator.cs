@@ -5,13 +5,17 @@ using UnityEngine;
 public class SpiritAnimator : MonoBehaviour
 {
 	[SerializeField] private float moveLerpSpeed, fadeLerpSpeed, lerpDelay;
+	
+	[HideInInspector] public AnimationClip talkingAnimation;
 
 	private Animator animator;
+	private new Animation animation;
 	private SpriteRenderer spriteRenderer;
 
 	private void Awake()
 	{
 		animator = GetComponent<Animator>();
+		animation = GetComponent<Animation>();
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
@@ -66,6 +70,19 @@ public class SpiritAnimator : MonoBehaviour
 	public void FloatStop()
 	{
 		animator.SetTrigger("stop");
+	}
+
+	[ContextMenu("Talk Start")]
+	public void TalkStart()
+	{
+		animation.clip = talkingAnimation;
+		animation.Play("Pirate_Talk");
+	}
+
+	[ContextMenu("Talk Stop")]
+	public void TalkStop()
+	{
+		animation.Stop();
 	}
 
 	[ContextMenu("Test Fade In")]

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spirit : MonoBehaviour
 {
 	[SerializeField] private float greetingSequenceEndDelay, judgementSequenceEndDelay, departureSequenceEndDelay;
-	
+
 	[HideInInspector] public string realName, description, demise;
 	[HideInInspector] public string[] dialog;
 

@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 	{
 		instance = this;
 		Application.targetFrameRate = 30;
-		Time.timeScale = 10; // For testing only!
+		// Time.timeScale = 10; // For testing only!
 	}
 
 	private void Start()
