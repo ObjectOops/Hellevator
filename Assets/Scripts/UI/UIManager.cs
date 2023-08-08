@@ -18,6 +18,10 @@ public class UIManager : MonoBehaviour
 	{
 		instance = this;
 		pauseMenu.SetActive(false);
+		if (transitionScreen != null)
+        {
+			transitionScreen.SetActive(false);
+        }
 	}
 
 	public void SetDay(int n)

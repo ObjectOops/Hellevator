@@ -8,6 +8,7 @@ public class Spirit : MonoBehaviour
 
 	[HideInInspector] public string realName, description, demise;
 	[HideInInspector] public string[] dialog;
+	[HideInInspector] public AudioClip[] voiceover;
 
 	private SpiritAnimator spiritAnimator;
 
@@ -27,6 +28,9 @@ public class Spirit : MonoBehaviour
 		yield return ElevatorAnimator.instance.Open(0);
 		spiritAnimator.FloatSpawn();
 		spiritAnimator.Idle();
+
+		AudioManager.instance.PlaySFX("Boo");
+
 		yield return spiritAnimator.FadeIn();
 		spiritAnimator.FloatStop();
 		yield return spiritAnimator.MoveTo(SpiritManager.instance.movementPoints[1]);
@@ -34,10 +38,10 @@ public class Spirit : MonoBehaviour
 		yield return ElevatorAnimator.instance.Close(0);
 		spiritAnimator.ExpressionReset();
 		spiritAnimator.Talk();
-		yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[0]}"); // Spirit speaks.
+		yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[0]}", null/*voiceover[0]*/); // Spirit speaks.
 		spiritAnimator.ExpressionReset();
 		spiritAnimator.Idle();
-		yield return Dialog.playerBox.Speak($"\n{GameManager.instance.playerName}\n\n{dialog[1]}"); // Player responds.
+		yield return Dialog.playerBox.Speak($"\n{GameManager.instance.playerName}\n\n{dialog[1]}", null/*voiceover[1]*/); // Player responds.
 
 		yield return new WaitForSeconds(greetingSequenceEndDelay);
 		Dialog.spiritBox.End();
@@ -50,13 +54,13 @@ public class Spirit : MonoBehaviour
 		spiritAnimator.Talk();
 		if (correct)
 		{
-			yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[2]}");
+			yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[2]}", null/*voiceover[2]*/);
 			spiritAnimator.ExpressionReset();
 			spiritAnimator.Correct();
 		}
 		else
 		{
-			yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[3]}");
+			yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[3]}", null/*voiceover[3]*/);
 			spiritAnimator.ExpressionReset();
 			spiritAnimator.Incorrect();
 		}

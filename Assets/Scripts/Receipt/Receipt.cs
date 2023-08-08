@@ -20,27 +20,33 @@ public class Receipt : MonoBehaviour
 
 	public void PrintSequence()
 	{
+		AudioManager.instance.PlaySFX("Receipt Unravel");
 		receiptAnimator.Print(finePrint);
 	}
 
 	public IEnumerator Judge(int buttonLevel)
 	{
 		bool boss = GameManager.instance.boss, correct = buttonLevel == level;
+
+		AudioManager.instance.PlaySFX(correct ? "Correct" : "Incorrect");
+
 		if (boss && !correct)
 		{
 			string realName = SpiritManager.instance.activeSpirit.realName;
 			string[] spiritDialog = SpiritManager.instance.activeSpirit.dialog;
+			AudioClip[] spiritVoiceover = SpiritManager.instance.activeSpirit.voiceover;
 			switch (stage)
 			{
+				// Spirit sequences inline with receipt for less back and forth.
 				case 0:
-					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[4]}");
+					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[4]}", null/*spiritVoiceover[4]*/);
 					yield return new WaitForSeconds(1);
 					Dialog.spiritBox.End();
 					Button.ResetButtons();
 					Button.levelSelected = false;
 					break;
 				default:
-					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[5]}");
+					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[5]}", null/*spiritVoiceover[5]*/);
 					GameManager.instance.judged = 0;
 					receiptAnimator.Discard();
 					yield return SpiritManager.instance.activeSpirit.DepartureSequence(buttonLevel);
@@ -61,10 +67,16 @@ public class Receipt : MonoBehaviour
 
 		string[] mephiDialogSuccess = SpiritManager.instance.mephiDialogSuccess;
 		string[] mephiDialogFail = SpiritManager.instance.mephiDialogFail;
+		AudioClip[] mephiVoiceoverSuccess = SpiritManager.instance.mephiVoiceoverSuccess;
+		AudioClip[] mephiVoiceoverFail = SpiritManager.instance.mephiVoiceoverFail;
+		int mephiRandom = Random.Range(0, Mathf.Min(mephiDialogSuccess.Length, mephiDialogFail.Length, mephiVoiceoverSuccess.Length, mephiVoiceoverFail.Length));
 		yield return Dialog.mephiBox.Speak($"\n{GameManager.instance.mephiName}\n\n" + (correct ? 
-			mephiDialogSuccess[Random.Range(0, mephiDialogSuccess.Length)] : 
-			mephiDialogFail[Random.Range(0, mephiDialogFail.Length)]
-		));
+			mephiDialogSuccess[mephiRandom] : 
+			mephiDialogFail[mephiRandom]
+		), correct ? 
+			mephiVoiceoverSuccess[mephiRandom] : 
+			mephiVoiceoverFail[mephiRandom]
+		);
 		Dialog.mephiBox.End();
 		
 		if (boss)
@@ -78,7 +90,7 @@ public class Receipt : MonoBehaviour
 			GameManager.instance.SetTrust(GameManager.instance.trust +
 				(correct ?
 					trustGain :
-					buttonLevel == 1 ? (int)(trustLose * limboReduction) : trustLose
+					buttonLevel == 1 ? (int)(trustGain * limboReduction) : trustLose
 				)
 			);
 		}

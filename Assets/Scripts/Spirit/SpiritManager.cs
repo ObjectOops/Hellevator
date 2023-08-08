@@ -12,6 +12,7 @@ public class SpiritManager : MonoBehaviour
 
 	[Header("Additional Feature Parameters")]
 	public string[] mephiDialogSuccess, mephiDialogFail, mephiIntermezzo;
+	public AudioClip[] mephiVoiceoverSuccess, mephiVoiceoverFail, mephiVoiceoverIntermezzo;
 
 	[HideInInspector] public Spirit activeSpirit;
 
@@ -40,6 +41,7 @@ public class SpiritManager : MonoBehaviour
 		spirit.description = trait.description;
 		spirit.demise = trait.demise;
 		spirit.dialog = trait.dialog;
+		spirit.voiceover = trait.voiceover;
 		activeSpirit = spirit;
 		yield return spirit.GreetingSequence();
 	}
@@ -56,5 +58,6 @@ public class SpiritManager : MonoBehaviour
 		public Sprite spriteCorrect, spriteinCorrect;
 		public string realName, description, demise;
 		public string[] dialog;
+		public AudioClip[] voiceover;
 	}
 }

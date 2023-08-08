@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
 	[SerializeField] private AudioName[] audioNames;
 	[SerializeField] private AudioSource musicComponent, sfxComponent, dialogComponent;
 	[SerializeField] private AudioMixer mixer;
+	[SerializeField] private float waitDelay;
 
 	private readonly Dictionary<string, AudioClip> audioMap = new();
 
@@ -43,9 +44,17 @@ public class AudioManager : MonoBehaviour
 		sfxComponent.PlayOneShot(audioMap[name], volumeScale);
 	}
 
-	public void PlayDialog(AudioClip voiceover, float volumeScale = 1)
+	public IEnumerator PlayDialog(AudioClip voiceover, float volumeScale = 1)
 	{
+		if (voiceover == null)
+		{
+			yield break;
+		}
 		dialogComponent.PlayOneShot(voiceover, volumeScale);
+		while (dialogComponent.isPlaying)
+		{
+			yield return new WaitForSeconds(waitDelay);
+		}
 	}
 
 	public void AdjustVolume(string groupName, float volume)

@@ -21,6 +21,7 @@ public class Button : MonoBehaviour
 
 	private void OnMouseDown()
 	{
+		AudioManager.instance.PlaySFX("Button Press");
 		if (!levelSelected)
 		{
 			buttonAnimator.Press();

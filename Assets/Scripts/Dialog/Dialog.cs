@@ -6,6 +6,8 @@ public class Dialog : MonoBehaviour
 {
 	public static Dialog spiritBox, playerBox, mephiBox;
 
+	[SerializeField] private float dialogBuffer;
+
 	public bool spirit, mephi;
 
 	private DialogAnimator dialogAnimator;
@@ -27,10 +29,12 @@ public class Dialog : MonoBehaviour
 		}
 	}
 
-	public IEnumerator Speak(string speech)
+	public IEnumerator Speak(string speech, AudioClip voiceover)
 	{
 		dialogAnimator.Blurb();
-		yield return dialogAnimator.LinearIn(speech);
+		StartCoroutine(dialogAnimator.LinearIn(speech));
+		yield return AudioManager.instance.PlayDialog(voiceover);
+		yield return new WaitForSeconds(dialogBuffer);
 	}
 
 	[ContextMenu("Test End")]
@@ -42,6 +46,6 @@ public class Dialog : MonoBehaviour
 	[ContextMenu("Test Speak")]
 	private void TestSpeak()
 	{
-		StartCoroutine(Speak("Test."));
+		StartCoroutine(Speak("Test.", null));
 	}
 }
