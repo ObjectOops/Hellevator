@@ -25,12 +25,16 @@ public class SpiritManager : MonoBehaviour
 		// `day` starts from 1.
 		Trait trait = traits[(day - 1) * GameManager.instance.limit + index];
 		GameObject spiritObject = Instantiate(spiritPrefab);
+
 		Spirit spirit = spiritObject.GetComponent<Spirit>();
 		SpiritAnimator spiritAnimator = spiritObject.GetComponent<SpiritAnimator>();
+
 		TransferTransform(spirit, movementPoints[0]); // Move to spawn point.
 
-		spirit.GetComponent<SpriteRenderer>().sprite = trait.sprite;
-		spiritAnimator.talkingAnimation = trait.talkingAnimation;
+		spiritAnimator.idleAnimation = trait.idleAnimation;
+		spiritAnimator.talkAnimation = trait.talkAnimation;
+		spiritAnimator.spriteCorrect = trait.spriteCorrect;
+		spiritAnimator.spriteIncorrect = trait.spriteinCorrect;
 
 		spirit.realName = trait.realName;
 		spirit.description = trait.description;
@@ -48,8 +52,8 @@ public class SpiritManager : MonoBehaviour
 
 	[System.Serializable] private struct Trait
 	{
-		public Sprite sprite;
-		public AnimationClip talkingAnimation;
+		public AnimationClip idleAnimation, talkAnimation;
+		public Sprite spriteCorrect, spriteinCorrect;
 		public string realName, description, demise;
 		public string[] dialog;
 	}

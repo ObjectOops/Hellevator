@@ -5,18 +5,26 @@ using UnityEngine;
 public class SpiritAnimator : MonoBehaviour
 {
 	[SerializeField] private float moveLerpSpeed, fadeLerpSpeed, lerpDelay;
-	
-	[HideInInspector] public AnimationClip talkingAnimation;
+
+	[HideInInspector] public AnimationClip idleAnimation, talkAnimation;
+	[HideInInspector] public Sprite spriteCorrect, spriteIncorrect;
 
 	private Animator animator;
-	private new Animation animation;
+	private AnimatorOverrideController overrideController;
 	private SpriteRenderer spriteRenderer;
+	private EAO expressionAnimationOverride = EAO.NONE;
+
+	// Very important, easy to mix up, constants.
+	private const string idleAnimationDiscriminator = "Spirit_Idle";
+	private const string talkAnimationDiscriminator = "Spirit_Talk";
 
 	private void Awake()
 	{
 		animator = GetComponent<Animator>();
-		animation = GetComponent<Animation>();
 		spriteRenderer = GetComponent<SpriteRenderer>();
+		overrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
+
+		animator.runtimeAnimatorController = overrideController;
 	}
 
 	public IEnumerator MoveTo(Transform posScale)
@@ -72,20 +80,60 @@ public class SpiritAnimator : MonoBehaviour
 		animator.SetTrigger("stop");
 	}
 
-	[ContextMenu("Talk Start")]
-	public void TalkStart()
+	/*
+	 * Warning:
+	 * The following two functions are every similar and are extremely easy to mix up.
+	 * If the spirits do not appear, it may be due to a malconfiguration or misuse of these functions.
+	 * Also see the feature animation layer.
+	 */
+
+	public void Idle()
 	{
-		animation.clip = talkingAnimation;
-		animation.Play("Pirate_Talk");
+		overrideController[idleAnimationDiscriminator] = idleAnimation;
+		animator.SetTrigger("idle");
 	}
 
-	[ContextMenu("Talk Stop")]
-	public void TalkStop()
+	public void Talk()
 	{
-		animation.Stop();
+		overrideController[talkAnimationDiscriminator] = talkAnimation;
+		animator.SetTrigger("talk");
 	}
 
-	[ContextMenu("Test Fade In")]
+	public void ExpressionReset()
+	{
+		animator.SetTrigger("reset");
+	}
+
+	public void Correct()
+	{
+		expressionAnimationOverride = EAO.CORRECT;
+	}
+
+	public void Incorrect()
+	{
+		expressionAnimationOverride = EAO.INCORRECT;
+	}
+
+	public void TerminateExpressionOverride()
+    {
+		expressionAnimationOverride = EAO.NONE;
+    }
+
+    // The only update function. This one is absolutely necessary.
+    private void LateUpdate()
+    {
+        switch (expressionAnimationOverride)
+        {
+			case EAO.CORRECT:
+				spriteRenderer.sprite = spriteCorrect;
+				break;
+			case EAO.INCORRECT:
+				spriteRenderer.sprite = spriteIncorrect;
+				break;
+        }
+    }
+
+    [ContextMenu("Test Fade In")]
 	private void TestFadeIn()
 	{
 		StartCoroutine(FadeIn());
@@ -95,5 +143,10 @@ public class SpiritAnimator : MonoBehaviour
 	private void TestFadeOut()
 	{
 		StartCoroutine(FadeOut());
+	}
+
+	private enum EAO
+	{
+		NONE, CORRECT, INCORRECT
 	}
 }

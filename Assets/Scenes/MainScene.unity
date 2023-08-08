@@ -3078,39 +3078,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spiritPrefab: {fileID: 8176770423405531543, guid: 63376eb84babd874eb81fb68ba45641e, type: 3}
   traits:
-  - sprite: {fileID: -879719854, guid: 2db302a54dc26a74c9bed703ea0d4ad7, type: 3}
-    talkingAnimation: {fileID: 7400000, guid: f76b11debed22854ab361f01f85ab9de, type: 2}
+  - idleAnimation: {fileID: 7400000, guid: 7ae08bd66be88b1418f6510e1ad8e6ea, type: 2}
+    talkAnimation: {fileID: 7400000, guid: f76b11debed22854ab361f01f85ab9de, type: 2}
+    spriteCorrect: {fileID: 21300000, guid: 5dc6141d2750df24b87c402bd1de1d24, type: 3}
+    spriteinCorrect: {fileID: 21300000, guid: b78a8628dadbdf746bd5a62ba7d67e18, type: 3}
     realName: Cap Tane
     description: Pirate
     demise: Got too silly and played Twister with a Sea Monster.
     dialog:
     - "Yarr! \u2019Tis not mine ship, whereth am-eth I-eth?"
     - Use context clues, captain.
-    - "Yarr, this sounds-eth about-eth right\u2026 TBH."
-    - "Arr, ye be mistaken... use context clues next time\u2026 -eth."
-  - sprite: {fileID: 2108830860, guid: a246d47072c57c24b91dda5087c8c4fd, type: 3}
-    talkingAnimation: {fileID: 0}
+    - Yarr, this sounds-eth about-eth right... TBH.
+    - Arr, ye be mistaken... use context clues next time... -eth.
+  - idleAnimation: {fileID: 7400000, guid: e69f7a05beabf9c4e9f99a5bbaa83b54, type: 2}
+    talkAnimation: {fileID: 7400000, guid: 321ab174e2fa16842ad1ddfa78ed8b0d, type: 2}
+    spriteCorrect: {fileID: 21300000, guid: b5be0bfc73369f24f92efbd75fe292de, type: 3}
+    spriteinCorrect: {fileID: 21300000, guid: c604190a97181c547a948b24e8ce19ed, type: 3}
     realName: Dr. Noseallot
     description: Psychologist
     demise: Tried to hard at poker.
     dialog:
-    - "Tell me, how\u2019s this job working out for you?"
+    - "Like tell me, how\u2019s this job like working out for you?"
     - It has its ups and downs.
-    - "Oh yes, people on this floor have so many issues\u2026 I could fix them\u2026!"
-    - "Agh\u2026 everyone here is so mentally stable! NOOOO!"
-  - sprite: {fileID: 1041629553, guid: ac8b7e3fb911e58488da6e0209c6cc76, type: 3}
-    talkingAnimation: {fileID: 0}
+    - Oh my god, like literally people on this floor have like so many issues...
+      I could like literally fix them...!
+    - Oh my god... everyone here is like so mentally stable! NAUR!
+  - idleAnimation: {fileID: 7400000, guid: 61beb8a5b65f1ba49864b2a20512c9ee, type: 2}
+    talkAnimation: {fileID: 7400000, guid: 8492948a3d80c734e9fc09dc50d80c6d, type: 2}
+    spriteCorrect: {fileID: 21300000, guid: 24018763eb299d249b7d1aaf8ea0f861, type: 3}
+    spriteinCorrect: {fileID: 21300000, guid: 5a3881e31f5d08a4eb02c7618679ffd8, type: 3}
     realName: Caul Ector
     description: Antique Dealer
     demise: Died trying to recover an old stolen coin.
     dialog:
-    - "This elevator\u2026 haah\u2026 would sell for\u2026 so\u2026 much\u2026 haah,
-      haah\u2026!"
+    - This elevator... haah... would sell for... so... much... haah, haah...!
     - Dude. Calm down.
     - Ooh, I see more clients there!
-    - "Young boy, I could sell you instead\u2026"
-  - sprite: {fileID: 975159688, guid: 0f88453f864e4cc48b88aa9c1d0077f5, type: 3}
-    talkingAnimation: {fileID: 0}
+    - Young boy, I could sell you instead...
+  - idleAnimation: {fileID: 7400000, guid: 2b7289da8ce16214aac8f38e1f74d8b5, type: 2}
+    talkAnimation: {fileID: 7400000, guid: 49c55ab965248594098c021544b8f6ee, type: 2}
+    spriteCorrect: {fileID: 21300000, guid: f5282a0b4c197da4386ab8099ebe8833, type: 3}
+    spriteinCorrect: {fileID: 21300000, guid: 60c87168b443ef640999dc3808ff79bf, type: 3}
     realName: Terry Bull
     description: Pro League of Legends player.
     demise: Drank too much G-Fuel.
@@ -3119,19 +3127,86 @@ MonoBehaviour:
     - Mario.
     - Y3AHHH! Wa1t, can w3 qu3u3 anoth3r?
     - BRUH, ur3 thr0w1ng my 3L0!
-  - sprite: {fileID: -275998051, guid: acf0def864ee66e45b60b34ec427b46b, type: 3}
-    talkingAnimation: {fileID: 0}
+  - idleAnimation: {fileID: 7400000, guid: a681fba4536ea8e47905b84889908f43, type: 2}
+    talkAnimation: {fileID: 7400000, guid: a02dd975fee5fb54dbc357cc4b01185e, type: 2}
+    spriteCorrect: {fileID: 21300000, guid: 421f350fce75fe941988f2ff9a498e14, type: 3}
+    spriteinCorrect: {fileID: 21300000, guid: 04d0a54c851748e42bfd611de2f24133, type: 3}
     realName: Gene Yuss
     description: Nerd
     demise: Car accident.
     dialog:
-    - "Ermmm, imagine failing a math test\u2026 could never be my shrewd self."
+    - Ermmm, imagine failing a math test... could never be my shrewd self.
     - "At least I\u2019ve touched grass before."
     - "Your hypothesis proved correct, I\u2019ll admit! Also, I can do mental maths,
       so I won\u2019t be needing this."
-    - "Ermmm, actshually\u2026 your decision appears to be incorrect."
-    - "Errrmmmmmmmmm\u2026. What the flip?!"
+    - Ermmm, actshually... your decision appears to be incorrect.
+    - Errrmmmmmmmmm... What the flip?!
     - Ermmm, allow me to reset your time-space continuum...
+  - idleAnimation: {fileID: 7400000, guid: 93c700b927c6b734295d13518aa31b44, type: 2}
+    talkAnimation: {fileID: 7400000, guid: 75736d370acc47840b545bd54f43b10d, type: 2}
+    spriteCorrect: {fileID: 21300000, guid: 8d94690126310d04699aca1cdfd4c6bc, type: 3}
+    spriteinCorrect: {fileID: 21300000, guid: 0b72f8addcf19424eb38e7ca45055a96, type: 3}
+    realName: Joe King
+    description: Court Jester
+    demise: "Joked about the emperor\u2019s love life."
+    dialog:
+    - "How do angels greet each other if they don\u2019t say hello? Heaven-o!"
+    - I think hell-o is still more appropriate, given our location.
+    - Two men walk into a bar... One stays in the elevator.
+    - Two men walk into the wrong circle of hell...
+  - idleAnimation: {fileID: 7400000, guid: 4eedc5eb80d90e04db1c7c8696916e3a, type: 2}
+    talkAnimation: {fileID: 7400000, guid: 3b8959eab9e500c448768626633a5f9a, type: 2}
+    spriteCorrect: {fileID: 21300000, guid: bb94bbc90cc2cb24ba8d428de8ccd544, type: 3}
+    spriteinCorrect: {fileID: 21300000, guid: 5b3c32cfa16d1ac45b2efd945ad6b866, type: 3}
+    realName: Charlie Hoarse
+    description: Olympic Sprinter
+    demise: Treadmill blew up.
+    dialog:
+    - Haah, haah... Whew, what a run! Got any water? I'm dying here.
+    - "Dying... Isn\u2019t that what you\u2019re supposed to be doing?"
+    - "I\u2019ll race you there!... You\u2019re not coming, are you."
+    - "You\u2019d better be the one to start running."
+  - idleAnimation: {fileID: 7400000, guid: b1331faf3bf1027489d54b6dcce17b66, type: 2}
+    talkAnimation: {fileID: 7400000, guid: dbcf8c7136e31d64784da88e5f6a3f00, type: 2}
+    spriteCorrect: {fileID: 21300000, guid: 6bd1158c6c66d474fa208011d6e677e7, type: 3}
+    spriteinCorrect: {fileID: 21300000, guid: 1a31b958c37cba64386abd1d3976263c, type: 3}
+    realName: Robin Bancs
+    description: French Burglar
+    demise: Got ze electric chair for taking un selfie at le crime scene.
+    dialog:
+    - Zere is joy to be found in being executed for being beautiful, non?
+    - "O-oui... (What\u2019s this guy waffling about?)"
+    - Alors! You 'ave recognized my charm, oui?
+    - Mon dieu... oh non. You are quite ne pas intelligente.
+  - idleAnimation: {fileID: 7400000, guid: 727582043c0897b4eac8c1cb0a3b299c, type: 2}
+    talkAnimation: {fileID: 7400000, guid: 740fd25f7b6409e409d3cb86a75dd575, type: 2}
+    spriteCorrect: {fileID: 21300000, guid: f24f0d6caacb10b4798ce2c30699b2c0, type: 3}
+    spriteinCorrect: {fileID: 21300000, guid: f6785320c63fca745b3c52a4b2c82b18, type: 3}
+    realName: Deid Mann
+    description: '"Salesman"'
+    demise: Carried off and killed by a hippopotamus.
+    dialog:
+    - Hey, kid. You interested in some rare floral concoctions?
+    - I'm twelve.
+    - Ha... You should be my sales partner! In a few years, of course.
+    - You know, 95% of clients who chose this floor... had extremely negative reviews!
+  - idleAnimation: {fileID: 7400000, guid: 7b2ced7df06feda4da59b147de95f5ab, type: 2}
+    talkAnimation: {fileID: 7400000, guid: d966ae636cf844d4bb306019a991408a, type: 2}
+    spriteCorrect: {fileID: 21300000, guid: d3d952a408881f540ba779f2ae89210a, type: 3}
+    spriteinCorrect: {fileID: 21300000, guid: b295b9ffa3e5ec841bec3b3c2777fc75, type: 3}
+    realName: Miranda Wrights
+    description: Police Officer
+    demise: Fell off segway while chasing a speeding car.
+    dialog:
+    - "They didn\u2019t let me bring my segway in here! You think I can charge them
+      for that?"
+    - Not really sure if cops have authority over literal demons.
+    - "Alright, I\u2019ll let you off the hook with a warning... and here's a donut;
+      I can\u2019t really eat it now that I\u2019m a ghost."
+    - You have the right to remain silent. Put your hands up. Now!
+    - Let me talk to your manager.
+    - Think of this as a police escort, but through time. So buckle up, we're taking
+      a detour back to the start of the day.
   movementPoints:
   - {fileID: 724860905}
   - {fileID: 630384794}
@@ -5153,7 +5228,7 @@ Transform:
   m_GameObject: {fileID: 1549974292}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2110027228}
@@ -5237,7 +5312,7 @@ Transform:
   m_GameObject: {fileID: 1551288937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2110027228}
@@ -5869,7 +5944,7 @@ Transform:
   m_GameObject: {fileID: 1791488138}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2110027228}
@@ -6660,7 +6735,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1462688961
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 96d1eeea1b768f94cbebe6a1ea23afc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6681,7 +6756,7 @@ Transform:
   m_GameObject: {fileID: 2027534980}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.125, y: 0.125, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2110027228}
