@@ -39,14 +39,14 @@ public class Receipt : MonoBehaviour
 			{
 				// Spirit sequences inline with receipt for less back and forth.
 				case 0:
-					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[4]}", null/*spiritVoiceover[4]*/);
+					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[4]}", spiritVoiceover[4]);
 					yield return new WaitForSeconds(1);
 					Dialog.spiritBox.End();
 					Button.ResetButtons();
 					Button.levelSelected = false;
 					break;
 				default:
-					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[5]}", null/*spiritVoiceover[5]*/);
+					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[5]}", spiritVoiceover[5]);
 					GameManager.instance.judged = 0;
 					receiptAnimator.Discard();
 					yield return SpiritManager.instance.activeSpirit.DepartureSequence(buttonLevel);
@@ -81,8 +81,19 @@ public class Receipt : MonoBehaviour
 		
 		if (boss)
 		{
+			yield return KeyAnimator.instance.NextObtain();
 			yield return GameManager.instance.NextDay();
 		}
+
+		if (GameManager.instance.escapeActive) // Only ever set during `NextDay`.
+		{
+			yield return KeyAnimator.instance.AllBye();
+			AudioManager.instance.PlaySFX("Assemble Key");
+			yield return new WaitForSeconds(1f);
+			yield return KeyAnimator.instance.Unlock();
+			yield break;
+		}
+
 		yield return GameManager.instance.NextSpirit();
 
 		void SetTrustInline(int buttonLevel, bool correct)

@@ -46,10 +46,6 @@ public class AudioManager : MonoBehaviour
 
 	public IEnumerator PlayDialog(AudioClip voiceover, float volumeScale = 1)
 	{
-		if (voiceover == null)
-		{
-			yield break;
-		}
 		dialogComponent.PlayOneShot(voiceover, volumeScale);
 		while (dialogComponent.isPlaying)
 		{

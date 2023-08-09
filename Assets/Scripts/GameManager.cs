@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
 	// Insert references to other scenes.
 	// Do not hide in inspector. Caution, default values may be overwritten in the inspector.
 	public int day = 1, trust = 500, judged = 0, limit = 5, lastDay = 4;
-	public bool boss = false;
+	
+	[HideInInspector] public bool boss = false, escapeActive = false;
 
 	private void Awake()
 	{
@@ -44,7 +45,8 @@ public class GameManager : MonoBehaviour
 		{
 			int bestTrust = Mathf.Max(trust, PlayerPrefs.GetInt("trust", 0));
 			PlayerPrefs.SetInt("trust", bestTrust);
-			SceneManager.instance.Load("Win");
+			escapeActive = true;
+			yield break;
 		}
 
 		UIManager.instance.ShowTransitionScreen($"Day: {day}");
@@ -54,9 +56,9 @@ public class GameManager : MonoBehaviour
 
 	public IEnumerator NextSpirit()
 	{
-		Button.ResetButtons();
 		yield return SpiritManager.instance.GenerateSpirit(day, judged);
 		boss = judged == limit - 1;
+		yield return new WaitForSeconds(0.2f); // To give the receipt print animation a sliver of time.
 		ReceiptManager.instance.GenerateReceipt(boss);
 		Button.levelSelected = false;
 		++judged;
@@ -80,5 +82,18 @@ public class GameManager : MonoBehaviour
 	private void GameOver()
 	{
 		SceneManager.instance.Load("Lose");
+	}
+
+	[ContextMenu("Jump to Boss")]
+	private void JumpToBoss()
+	{
+		judged = limit - 1;
+	}
+
+	[ContextMenu("Jump to End")]
+	private void JumpToEnd()
+	{
+		JumpToBoss();
+		day = lastDay - 1;
 	}
 }

@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 
 	[SerializeField] private TextMeshPro day, trust;
 	[SerializeField] private GameObject pauseMenu, transitionScreen;
+	[SerializeField] private GameObject handbookClosed, handbookMenu;
 	[SerializeField] private Animator dayAnimator, trustAnimator;
 	[SerializeField] private float notifyDuration, transitionDuration;
 
@@ -19,9 +20,13 @@ public class UIManager : MonoBehaviour
 		instance = this;
 		pauseMenu.SetActive(false);
 		if (transitionScreen != null)
-        {
+		{
 			transitionScreen.SetActive(false);
-        }
+		}
+		if (handbookMenu != null)
+		{
+			handbookMenu.SetActive(false);
+		}
 	}
 
 	public void SetDay(int n)
@@ -56,6 +61,18 @@ public class UIManager : MonoBehaviour
 		pauseMenu.SetActive(false);
 		Time.timeScale = 1f;
 		paused = false;
+	}
+
+	public void OpenHandbook()
+	{
+		handbookClosed.SetActive(false);
+		handbookMenu.SetActive(true);
+	}
+
+	public void CloseHandbook()
+	{
+		handbookMenu.SetActive(false);
+		handbookClosed.SetActive(true);
 	}
 
 	public void ShowTransitionScreen(string text)

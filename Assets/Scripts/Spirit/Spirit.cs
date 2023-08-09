@@ -24,6 +24,8 @@ public class Spirit : MonoBehaviour
 
 	public IEnumerator GreetingSequence()
 	{
+		AudioManager.instance.PlaySFX("Ding");
+		
 		yield return ElevatorAnimator.instance.Shake();
 		yield return ElevatorAnimator.instance.Open(0);
 		spiritAnimator.FloatSpawn();
@@ -38,10 +40,10 @@ public class Spirit : MonoBehaviour
 		yield return ElevatorAnimator.instance.Close(0);
 		spiritAnimator.ExpressionReset();
 		spiritAnimator.Talk();
-		yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[0]}", null/*voiceover[0]*/); // Spirit speaks.
+		yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[0]}", voiceover[0]); // Spirit speaks.
 		spiritAnimator.ExpressionReset();
 		spiritAnimator.Idle();
-		yield return Dialog.playerBox.Speak($"\n{GameManager.instance.playerName}\n\n{dialog[1]}", null/*voiceover[1]*/); // Player responds.
+		yield return Dialog.playerBox.Speak($"\n{GameManager.instance.playerName}\n\n{dialog[1]}", voiceover[1]); // Player responds.
 
 		yield return new WaitForSeconds(greetingSequenceEndDelay);
 		Dialog.spiritBox.End();
@@ -54,13 +56,13 @@ public class Spirit : MonoBehaviour
 		spiritAnimator.Talk();
 		if (correct)
 		{
-			yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[2]}", null/*voiceover[2]*/);
+			yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[2]}", voiceover[2]);
 			spiritAnimator.ExpressionReset();
 			spiritAnimator.Correct();
 		}
 		else
 		{
-			yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[3]}", null/*voiceover[3]*/);
+			yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[3]}", voiceover[3]);
 			spiritAnimator.ExpressionReset();
 			spiritAnimator.Incorrect();
 		}
@@ -73,6 +75,7 @@ public class Spirit : MonoBehaviour
 		Dialog.spiritBox.End();
 
 		yield return ElevatorAnimator.instance.Shake();
+		Button.ResetButtons();
 		yield return ElevatorAnimator.instance.Open(level);
 		spiritAnimator.TerminateExpressionOverride();
 		spiritAnimator.Idle();

@@ -7,15 +7,23 @@ using UnityEngine.InputSystem;
 public class Button : MonoBehaviour
 {
 	public static bool levelSelected = true;
-	public static List<Button> buttons = new();
+	private static readonly List<Button> buttons = new();
 
 	[SerializeField] private int level;
 
 	private ButtonAnimator buttonAnimator;
 
+	private const int normalButtonCount = 9;
+
 	private void Awake()
 	{
 		buttonAnimator = GetComponent<ButtonAnimator>();
+		
+		if (buttons.Count == normalButtonCount) // Extremely important! Static references carry over between scenes!
+		{
+			buttons.Clear(); // Ensures that old buttons are cleared on game replay.
+		}
+		
 		buttons.Add(this);
 	}
 
