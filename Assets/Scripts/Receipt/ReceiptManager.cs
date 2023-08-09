@@ -11,9 +11,14 @@ public class ReceiptManager : MonoBehaviour
 	[SerializeField] private CrimeCategory[] crimeCategories;
 
 	// May need under some circumstances.
-	[SerializeField] private int receiptCharacterLengthMax;
+	// [SerializeField] private int receiptCharacterLengthMax;
 
 	[HideInInspector] public Receipt activeReceipt;
+
+	private readonly HashSet<string> usedCrimes = new();
+
+	// [2, 10) --> for each of the nine levels *with crimes*.
+	private const int lowerBound = 1, upperBound = 9;
 
 	private void Awake()
 	{
@@ -31,31 +36,28 @@ public class ReceiptManager : MonoBehaviour
 		receipt.transform.SetPositionAndRotation(receiptSpawn.position, receiptSpawn.rotation);
 		receipt.transform.localScale = receiptSpawn.localScale;
 
-		// [2, 10) --> for each of the nine levels *with crimes*.
-		int lowerBound = 1, upperBound = 9;
-		int rand1 = Random.Range(lowerBound, upperBound), rand2 = Random.Range(lowerBound, upperBound);
-		while (rand1 == rand2)
-		{
-			rand2 = Random.Range(lowerBound, upperBound);
-		}
-		CrimeCategory minorLevel = crimeCategories[rand1], majorLevel = crimeCategories[rand2];
+		KeyValuePair<int, string> minorPair = GetUniqueCrime();
+		int minorLevel = minorPair.Key;
+		string minorCrime = minorPair.Value;
+
 		List<string> crimesCommitted = new();
 
 		// One minor crime.
-		crimesCommitted.Add(minorLevel.crimes[Random.Range(0, minorLevel.crimes.Length)]);
-		receipt.level = minorLevel.level;
+		crimesCommitted.Add(minorCrime);
+		receipt.level = minorLevel;
+
 		if (isBoss)
 		{
+			KeyValuePair<int, string> majorPair1 = GetUniqueCrime(excludeLevel: minorLevel);
+			int majorLevel = majorPair1.Key;
+			string majorCrime1 = majorPair1.Value;
+			KeyValuePair<int, string> majorPair2 = GetUniqueCrime(forceLevel: majorLevel, excludeCrime: majorCrime1);
+			string majorCrime2 = majorPair2.Value;
+
 			// Two major crimes.
-			string first = majorLevel.crimes[Random.Range(0, majorLevel.crimes.Length)];
-			string second = majorLevel.crimes[Random.Range(0, majorLevel.crimes.Length)];
-			while (first == second)
-			{
-				second = majorLevel.crimes[Random.Range(0, majorLevel.crimes.Length)];
-			}
-			crimesCommitted.Add(first);
-			crimesCommitted.Add(second);
-			receipt.level = majorLevel.level;
+			crimesCommitted.Add(majorCrime1);
+			crimesCommitted.Add(majorCrime2);
+			receipt.level = majorLevel;
 		}
 
 		// Scramble the order of crimes.
@@ -81,20 +83,51 @@ $@"{SpiritManager.instance.activeSpirit.realName}
 		receipt.PrintSequence();
 	}
 
-	// May need under some circumstances.
-	private string BreakString(string str)
+	// There should always be enough crimes.
+	private KeyValuePair<int, string> GetUniqueCrime(int excludeLevel = -1, int forceLevel = -1, string excludeCrime = null)
 	{
-		string result = "";
-		for (int i = 0; i < str.Length; ++i)
+		if (forceLevel != -1)
 		{
-			result += str[i];
-			if (i % receiptCharacterLengthMax == 0)
+			CrimeCategory forceCategory = crimeCategories[forceLevel - 1];
+			string forceCrime = forceCategory.crimes[Random.Range(0, forceCategory.crimes.Length)];
+			while (forceCrime == excludeCrime)
 			{
-				result += '\n';
+				forceCrime = forceCategory.crimes[Random.Range(0, forceCategory.crimes.Length)];
 			}
+			usedCrimes.Add(forceCrime);
+			return new KeyValuePair<int, string>(forceLevel, forceCrime);
 		}
-		return result;
+
+		int randLevel = Random.Range(lowerBound, upperBound);
+		while (crimeCategories[randLevel].crimes.Length == 0 || 
+			   crimeCategories[randLevel].level == excludeLevel)
+		{
+			randLevel = Random.Range(lowerBound, upperBound);
+		}
+		CrimeCategory category = crimeCategories[randLevel];
+		string randCrime = category.crimes[Random.Range(0, category.crimes.Length)];
+		while (usedCrimes.Contains(randCrime))
+		{
+			randCrime = category.crimes[Random.Range(0, category.crimes.Length)];
+		}
+		usedCrimes.Add(randCrime);
+		return new KeyValuePair<int, string>(category.level, randCrime);
 	}
+
+	// May need under some circumstances.
+	// private string BreakString(string str)
+	// {
+		// string result = "";
+		// for (int i = 0; i < str.Length; ++i)
+		// {
+			// result += str[i];
+			// if (i % receiptCharacterLengthMax == 0)
+			// {
+				// result += '\n';
+			// }
+		// }
+		// return result;
+	// }
 
 	[System.Serializable] private struct CrimeCategory
 	{

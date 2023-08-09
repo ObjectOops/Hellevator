@@ -37,6 +37,11 @@ public class Dialog : MonoBehaviour
 		yield return new WaitForSeconds(dialogBuffer);
 	}
 
+	private void OnMouseDown()
+	{
+		AudioManager.instance.StopDialog();
+	}
+
 	[ContextMenu("Test End")]
 	public void End()
 	{

@@ -5,7 +5,7 @@ using TMPro;
 
 public class ReceiptAnimator : MonoBehaviour
 {
-	[SerializeField] private float textPrintDelay;
+	[SerializeField] private float textPrintDelay, overflowFontSizeReduction;
 
 	private Animator animator;
 	private TextMeshPro textMesh;
@@ -40,6 +40,10 @@ public class ReceiptAnimator : MonoBehaviour
 			if (isPrinting)
 			{
 				textMesh.text += c;
+				if (textMesh.isTextOverflowing)
+				{
+					textMesh.fontSize -= overflowFontSizeReduction;
+				}
 			}
 			yield return new WaitForSeconds(textPrintDelay);
 		}

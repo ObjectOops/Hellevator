@@ -6,6 +6,7 @@ public class Receipt : MonoBehaviour
 {
 	[SerializeField] private int trustGain, trustLose, resetTrust = 250; // May be overwritten in the inspector.
 	[SerializeField] private float limboReduction;
+	[SerializeField] private string bossGhostHeader;
 
 	private ReceiptAnimator receiptAnimator;
 	private int stage = 0;
@@ -21,6 +22,10 @@ public class Receipt : MonoBehaviour
 	public void PrintSequence()
 	{
 		AudioManager.instance.PlaySFX("Receipt Unravel");
+		if (GameManager.instance.boss)
+		{
+			finePrint = bossGhostHeader + finePrint;
+		}
 		receiptAnimator.Print(finePrint);
 	}
 
@@ -44,12 +49,13 @@ public class Receipt : MonoBehaviour
 			{
 				// Spirit sequences inline with receipt for less back and forth.
 				case 0:
-					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[4]}", spiritVoiceover[4]);
+					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[3]}", spiritVoiceover[3]);
 					spiritAnimator.ExpressionReset();
 					spiritAnimator.Idle();
 					Dialog.spiritBox.End();
 					Button.ResetButtons();
 					Button.levelSelected = false;
+					StartCoroutine(GameManager.instance.DecisionTimer());
 					break;
 				default:
 					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[5]}", spiritVoiceover[5]);
@@ -111,7 +117,7 @@ public class Receipt : MonoBehaviour
 			GameManager.instance.SetTrust(GameManager.instance.trust +
 				(correct ?
 					trustGain :
-					buttonLevel == 1 ? (int)(trustGain * limboReduction) : trustLose
+					buttonLevel == 1 ? (int)(trustLose * limboReduction) : trustLose
 				)
 			);
 		}

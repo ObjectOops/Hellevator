@@ -6,13 +6,17 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
 
+	[SerializeField] private int[] dayTimers;
+	[SerializeField] private int bossTimeExtra;
+
 	public string playerName = "Dante", mephiName = "Mephistopheles"; // May be overwritten in the inspector.
 
-	// Insert references to other scenes.
 	// Do not hide in inspector. Caution, default values may be overwritten in the inspector.
 	public int day = 1, trust = 500, judged = 0, limit = 5, lastDay = 4;
 	
 	[HideInInspector] public bool boss = false, escapeActive = false;
+
+	private int timeRemaining;
 
 	private void Awake()
 	{
@@ -45,6 +49,7 @@ public class GameManager : MonoBehaviour
 		{
 			int bestTrust = Mathf.Max(trust, PlayerPrefs.GetInt("trust", 0));
 			PlayerPrefs.SetInt("trust", bestTrust);
+			PlayerPrefs.SetInt("currentTrust", trust);
 			escapeActive = true;
 			yield break;
 		}
@@ -56,12 +61,29 @@ public class GameManager : MonoBehaviour
 
 	public IEnumerator NextSpirit()
 	{
-		yield return SpiritManager.instance.GenerateSpirit(day, judged);
 		boss = judged == limit - 1;
+		yield return SpiritManager.instance.GenerateSpirit(day, judged);
 		yield return new WaitForSeconds(0.2f); // To give the receipt print animation a sliver of time.
 		ReceiptManager.instance.GenerateReceipt(boss);
 		Button.levelSelected = false;
 		++judged;
+		StartCoroutine(DecisionTimer());
+	}
+
+	public IEnumerator DecisionTimer()
+	{
+		timeRemaining = dayTimers[day - 1] + (boss ? bossTimeExtra : 0);
+		while (!Button.levelSelected)
+		{
+			yield return new WaitForSeconds(1f);
+			--timeRemaining;
+			UIManager.instance.SetTimer(timeRemaining);
+			if (timeRemaining == 0)
+			{
+				StartCoroutine(ReceiptManager.instance.activeReceipt.Judge(1));
+				Button.levelSelected = true;
+			}
+		}
 	}
 
 	public void SetTrust(int newTrust)

@@ -26,6 +26,10 @@ public class DialogAnimator : MonoBehaviour
 		{
 			textMesh.text += c;
 			yield return new WaitForSeconds(textDelay);
+			if (textMesh.isTextOverflowing)
+			{
+				textMesh.text = "\n\n\n...";
+			}
 		}
 	}
 

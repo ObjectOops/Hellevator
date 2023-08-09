@@ -11,8 +11,8 @@ public class PressToReplay : MonoBehaviour
 
 	private void Start()
 	{
-		int highscore = PlayerPrefs.GetInt("trust");
-		highscoreText.text = $"Best Trustworthiness: {highscore}";
+		int highscore = PlayerPrefs.GetInt("trust", 0), score = PlayerPrefs.GetInt("currentTrust", 0);
+		highscoreText.text = $"Trustworthiness: {score} | Best Trustworthiness: {highscore}";
 		AudioManager.instance.PlaySFX("Sound Effect");
 
 		if (credits != null)

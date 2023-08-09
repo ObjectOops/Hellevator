@@ -29,9 +29,9 @@ public class Button : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		AudioManager.instance.PlaySFX("Button Press");
-		if (!levelSelected)
+		if (!levelSelected && !UIManager.instance.paused)
 		{
+			AudioManager.instance.PlaySFX("Button Press");
 			buttonAnimator.Press();
 			StartCoroutine(ReceiptManager.instance.activeReceipt.Judge(level));
 			levelSelected = true;

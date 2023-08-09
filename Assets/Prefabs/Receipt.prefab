@@ -456,7 +456,9 @@ MonoBehaviour:
   trustGain: 100
   trustLose: -100
   resetTrust: 250
-  limboReduction: 0.25
+  limboReduction: 0.5
+  bossGhostHeader: '<b>Boss Ghost: Two attempts! The level should reflect the majority
+    of crimes presented.</b><br>'
   finePrint: 
   level: 0
 --- !u!114 &5689772161029165425
@@ -472,6 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPrintDelay: 0.025
+  overflowFontSizeReduction: 0.05
 --- !u!95 &5689772161029165424
 Animator:
   serializedVersion: 5

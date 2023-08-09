@@ -71,6 +71,11 @@ public class AudioManager : MonoBehaviour
 		musicComponent.Stop();
 	}
 
+	public void StopDialog()
+	{
+		dialogComponent.Stop();
+	}
+
 	[System.Serializable] private struct AudioName
 	{
 		public string name;

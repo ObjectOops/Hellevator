@@ -45,6 +45,17 @@ public class Spirit : MonoBehaviour
 		spiritAnimator.Idle();
 		yield return Dialog.playerBox.Speak($"\n{GameManager.instance.playerName}\n\n{dialog[1]}", voiceover[1]); // Player responds.
 
+		// Additional boss dialog.
+		if (GameManager.instance.boss)
+		{
+			spiritAnimator.ExpressionReset();
+			spiritAnimator.Talk();
+			Dialog.spiritBox.End();
+			yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{dialog[4]}", voiceover[4]);
+			spiritAnimator.ExpressionReset();
+			spiritAnimator.Idle();
+		}
+
 		yield return new WaitForSeconds(greetingSequenceEndDelay);
 		Dialog.spiritBox.End();
 		Dialog.playerBox.End();

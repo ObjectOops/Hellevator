@@ -251,7 +251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Best Trustworthiness: 0'
+  m_text: 'Trustworthiness: 0 | Best Trustworthiness: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86706c7345c61a245935505b898a40cb, type: 2}
   m_sharedMaterial: {fileID: -7862157617416083445, guid: 86706c7345c61a245935505b898a40cb, type: 2}
