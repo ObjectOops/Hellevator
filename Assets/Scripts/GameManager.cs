@@ -76,6 +76,10 @@ public class GameManager : MonoBehaviour
 		while (!Button.levelSelected)
 		{
 			yield return new WaitForSeconds(1f);
+			if (Button.levelSelected)
+			{
+				yield break;
+			}
 			--timeRemaining;
 			UIManager.instance.SetTimer(timeRemaining);
 			if (timeRemaining == 0)
