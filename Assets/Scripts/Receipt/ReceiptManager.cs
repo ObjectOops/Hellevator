@@ -8,7 +8,7 @@ public class ReceiptManager : MonoBehaviour
 
 	[SerializeField] private GameObject receiptPrefab;
 	[SerializeField] private Transform receiptSpawn;
-	[SerializeField] private List<CrimeCategory> crimeCategories;
+	[SerializeField] private CrimeCategory[] crimeCategories;
 
 	// May need under some circumstances.
 	[SerializeField] private int receiptCharacterLengthMax;
@@ -18,7 +18,7 @@ public class ReceiptManager : MonoBehaviour
 	private void Awake()
 	{
 		instance = this;
-		if (crimeCategories.Count != 9)
+		if (crimeCategories.Length != 9)
 		{
 			Debug.LogWarning("Crime category count does not equal nine.", this);
 		}
@@ -42,16 +42,16 @@ public class ReceiptManager : MonoBehaviour
 		List<string> crimesCommitted = new();
 
 		// One minor crime.
-		crimesCommitted.Add(minorLevel.crimes[Random.Range(0, minorLevel.crimes.Count)]);
+		crimesCommitted.Add(minorLevel.crimes[Random.Range(0, minorLevel.crimes.Length)]);
 		receipt.level = minorLevel.level;
 		if (isBoss)
 		{
 			// Two major crimes.
-			string first = majorLevel.crimes[Random.Range(0, majorLevel.crimes.Count)];
-			string second = majorLevel.crimes[Random.Range(0, majorLevel.crimes.Count)];
+			string first = majorLevel.crimes[Random.Range(0, majorLevel.crimes.Length)];
+			string second = majorLevel.crimes[Random.Range(0, majorLevel.crimes.Length)];
 			while (first == second)
 			{
-				second = majorLevel.crimes[Random.Range(0, majorLevel.crimes.Count)];
+				second = majorLevel.crimes[Random.Range(0, majorLevel.crimes.Length)];
 			}
 			crimesCommitted.Add(first);
 			crimesCommitted.Add(second);
@@ -99,6 +99,6 @@ $@"{SpiritManager.instance.activeSpirit.realName}
 	[System.Serializable] private struct CrimeCategory
 	{
 		public int level;
-		public List<string> crimes;
+		public string[] crimes;
 	}
 }

@@ -115,25 +115,25 @@ public class SpiritAnimator : MonoBehaviour
 	}
 
 	public void TerminateExpressionOverride()
-    {
+	{
 		expressionAnimationOverride = EAO.NONE;
-    }
+	}
 
-    // The only update function. This one is absolutely necessary.
-    private void LateUpdate()
-    {
-        switch (expressionAnimationOverride)
-        {
+	// The only update function. This one is absolutely necessary.
+	private void LateUpdate()
+	{
+		switch (expressionAnimationOverride)
+		{
 			case EAO.CORRECT:
 				spriteRenderer.sprite = spriteCorrect;
 				break;
 			case EAO.INCORRECT:
 				spriteRenderer.sprite = spriteIncorrect;
 				break;
-        }
-    }
+		}
+	}
 
-    [ContextMenu("Test Fade In")]
+	[ContextMenu("Test Fade In")]
 	private void TestFadeIn()
 	{
 		StartCoroutine(FadeIn());

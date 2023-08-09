@@ -6,6 +6,7 @@ using TMPro;
 public class PressToReplay : MonoBehaviour
 {
 	[SerializeField] private TextMeshPro highscoreText;
+	[SerializeField] private GameObject credits;
 	[SerializeField] private float timeBuffer = 5f; // For some reason the mouse press event from the previous scene persists.
 
 	private void Start()
@@ -13,6 +14,11 @@ public class PressToReplay : MonoBehaviour
 		int highscore = PlayerPrefs.GetInt("trust");
 		highscoreText.text = $"Best Trustworthiness: {highscore}";
 		AudioManager.instance.PlaySFX("Sound Effect");
+
+		if (credits != null)
+		{
+			credits.SetActive(true);
+		}
 	}
 
 	private void OnMouseDown()

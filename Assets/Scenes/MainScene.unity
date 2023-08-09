@@ -898,9 +898,9 @@ MonoBehaviour:
     crimes: []
   - level: 2
     crimes:
-    - "Posted to TikTok with caption \u201CI\u2019m the rizzler\u201D."
+    - Posted to TikTok with caption "I'm the rizzler".
     - Excessive commenting on a picture of an anime girl.
-    - "Unnecessary spamming of the Doge \u201Cgo to horny jail\u201D image."
+    - Unnecessary spamming of the Doge "go to horny jail" image.
     - Played too many dating sims.
     - Used a cringe pick up line.
   - level: 3
@@ -926,17 +926,16 @@ MonoBehaviour:
     - 10 minutes of yelling over Discord VC.
   - level: 6
     crimes:
-    - "Told a child that the Tooth Fairy wasn\u2019t real."
-    - "Didn\u2019t dress up for Halloween."
+    - Told a child that the Tooth Fairy wasn't real.
+    - Didn't dress up for Halloween.
     - Touched the Elf on the Shelf.
-    - "Didn\u2019t play \u201CAll I Want for Christmas is You\u201D on Christmas
-      Day."
-    - "Didn\u2019t buy gifts for X-mas or play the role of Santa in their household."
+    - Didn't play "All I Want for Christmas is You" on Christmas Day.
+    - Didn't buy gifts for X-mas or play the role of Santa in their household.
   - level: 7
     crimes:
     - Did the Undertale genocide route first.
     - Picked the "No Russian" mission in Call of Duty and killed all the civilians.
-    - "Microwaved silverware\u2026 intentionally."
+    - Microwaved silverware... intentionally.
     - Spoiled the end of a movie.
     - Started a nerf gun war.
   - level: 8
@@ -954,8 +953,7 @@ MonoBehaviour:
       them.
     - Pulled on the gacha banner for their second favorite character instead of saving
       for their first.
-    - "Turned on Discord \u201CInvisible\u201D mode even though they continued to
-      be active."
+    - Turned on Discord "Invisible" mode even though they continued to be active.
     - Attempted to overthrow the government.
   receiptCharacterLengthMax: 0
   activeReceipt: {fileID: 0}
@@ -1082,8 +1080,8 @@ MonoBehaviour:
   labelColor: {r: 0, g: 1, b: 0, a: 1}
   shade: {fileID: 2010029424}
   sequentialAnimators:
-  - {fileID: 1301225843}
   - {fileID: 536449744}
+  - {fileID: 1301225843}
   - {fileID: 1513419468}
   particles: {fileID: 1126406784}
   unlockLabelText: ESCAPE

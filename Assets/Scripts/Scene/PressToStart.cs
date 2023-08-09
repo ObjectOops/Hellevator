@@ -9,7 +9,7 @@ public class PressToStart : MonoBehaviour
 
 	[SerializeField] private VideoPlayer cutscene;
 	[SerializeField] private GameObject[] otherObjects;
-	[SerializeField] private GameObject loading;
+	[SerializeField] private GameObject loading, goose;
 
 	private SpriteRenderer backgroundRenderer;
 
@@ -17,7 +17,7 @@ public class PressToStart : MonoBehaviour
 	{
 		backgroundRenderer = GetComponent<SpriteRenderer>();
 		loading.SetActive(false);
-		AudioManager.instance.PlayMusic("Intro Theme");
+		goose.SetActive(true);
 	}
 
 	private void OnMouseDown()

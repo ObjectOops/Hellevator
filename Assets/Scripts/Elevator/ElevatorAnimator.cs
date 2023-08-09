@@ -42,11 +42,11 @@ public class ElevatorAnimator : MonoBehaviour
 	public IEnumerator Close(int level)
 	{
 		animator.SetTrigger("close");
-        // while (opened)
-        // {
-        // yield return new WaitForSeconds(waitDelay);
-        // }
-        yield return new WaitWhile(() => opened);
+		// while (opened)
+		// {
+		// yield return new WaitForSeconds(waitDelay);
+		// }
+		yield return new WaitWhile(() => opened);
 		floors[level].SetActive(false);
 	}
 
