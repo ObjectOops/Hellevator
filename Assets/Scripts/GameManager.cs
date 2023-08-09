@@ -67,7 +67,6 @@ public class GameManager : MonoBehaviour
 		ReceiptManager.instance.GenerateReceipt(boss);
 		Button.levelSelected = false;
 		++judged;
-		StartCoroutine(DecisionTimer());
 	}
 
 	public IEnumerator DecisionTimer()

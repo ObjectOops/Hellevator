@@ -72,6 +72,7 @@ public class UIManager : MonoBehaviour
 	{
 		handbookClosed.SetActive(false);
 		handbookMenu.SetActive(true);
+		Time.timeScale = 0f;
 		paused = true;
 	}
 
@@ -79,6 +80,7 @@ public class UIManager : MonoBehaviour
 	{
 		handbookMenu.SetActive(false);
 		handbookClosed.SetActive(true);
+		Time.timeScale = 1f;
 		paused = false;
 	}
 

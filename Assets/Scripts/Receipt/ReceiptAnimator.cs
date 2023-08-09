@@ -47,6 +47,7 @@ public class ReceiptAnimator : MonoBehaviour
 			}
 			yield return new WaitForSeconds(textPrintDelay);
 		}
+		StartCoroutine(GameManager.instance.DecisionTimer());
 	}
 
 	public void Trash() // Called by animation event.
