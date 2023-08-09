@@ -35,22 +35,32 @@ public class Receipt : MonoBehaviour
 			string realName = SpiritManager.instance.activeSpirit.realName;
 			string[] spiritDialog = SpiritManager.instance.activeSpirit.dialog;
 			AudioClip[] spiritVoiceover = SpiritManager.instance.activeSpirit.voiceover;
+			SpiritAnimator spiritAnimator = SpiritManager.instance.activeSpirit.spiritAnimator;
+
+			spiritAnimator.ExpressionReset();
+			spiritAnimator.Talk();
+			
 			switch (stage)
 			{
 				// Spirit sequences inline with receipt for less back and forth.
 				case 0:
 					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[4]}", spiritVoiceover[4]);
-					yield return new WaitForSeconds(1);
+					spiritAnimator.ExpressionReset();
+					spiritAnimator.Idle();
 					Dialog.spiritBox.End();
 					Button.ResetButtons();
 					Button.levelSelected = false;
 					break;
 				default:
 					yield return Dialog.spiritBox.Speak($"\n{realName}\n\n{spiritDialog[5]}", spiritVoiceover[5]);
-					GameManager.instance.judged = 0;
+					spiritAnimator.ExpressionReset();
+					spiritAnimator.Idle();
+					GameManager.instance.judged = 0; // Reset to beginning of the day.
 					receiptAnimator.Discard();
+
+					AudioManager.instance.PlaySFX("Day Reset");
+
 					yield return SpiritManager.instance.activeSpirit.DepartureSequence(buttonLevel);
-					Dialog.spiritBox.End();
 					GameManager.instance.SetTrust(resetTrust);
 					yield return GameManager.instance.NextSpirit();
 					break;

@@ -2798,11 +2798,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a57f98c82f19213479a0ec90da6188a2, type: 3}
   - name: Assemble Key
     clip: {fileID: 8300000, guid: 68ddba01acc84d94194cd337b86a6a6f, type: 3}
+  - name: Day Reset
+    clip: {fileID: 8300000, guid: 9f45f7ddac91fa642b1f1cd2f792fc4a, type: 3}
   musicComponent: {fileID: 608723618}
   sfxComponent: {fileID: 608723617}
   dialogComponent: {fileID: 608723616}
   mixer: {fileID: 24100000, guid: 547e9a67b6596ee4ca041bd00f75dc85, type: 2}
-  waitDelay: 0.1
 --- !u!1 &630384793
 GameObject:
   m_ObjectHideFlags: 0
@@ -13429,7 +13430,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraAnimator: {fileID: 11380839}
-  waitDelay: 0.1
   elevatorTransitDelay: 1
   floors:
   - {fileID: 2027534980}

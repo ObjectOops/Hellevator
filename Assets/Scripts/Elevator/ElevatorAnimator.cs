@@ -7,7 +7,7 @@ public class ElevatorAnimator : MonoBehaviour
 	public static ElevatorAnimator instance;
 
 	[SerializeField] private Animator cameraAnimator;
-	[SerializeField] private float waitDelay, elevatorTransitDelay;
+	[SerializeField] private float /*waitDelay, */elevatorTransitDelay;
 	[SerializeField] private GameObject[] floors;
 
 	private Animator animator;
@@ -32,19 +32,21 @@ public class ElevatorAnimator : MonoBehaviour
 	{
 		floors[level].SetActive(true);
 		animator.SetTrigger("open");
-		while (!opened)
-		{
-			yield return new WaitForSeconds(waitDelay);
-		}
+		// while (!opened)
+		// {
+		// yield return new WaitForSeconds(waitDelay);
+		// }
+		yield return new WaitWhile(() => !opened);
 	}
 
 	public IEnumerator Close(int level)
 	{
 		animator.SetTrigger("close");
-		while (opened)
-		{
-			yield return new WaitForSeconds(waitDelay);
-		}
+        // while (opened)
+        // {
+        // yield return new WaitForSeconds(waitDelay);
+        // }
+        yield return new WaitWhile(() => opened);
 		floors[level].SetActive(false);
 	}
 

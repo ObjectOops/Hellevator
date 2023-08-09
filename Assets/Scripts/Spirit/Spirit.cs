@@ -10,7 +10,7 @@ public class Spirit : MonoBehaviour
 	[HideInInspector] public string[] dialog;
 	[HideInInspector] public AudioClip[] voiceover;
 
-	private SpiritAnimator spiritAnimator;
+	[HideInInspector] public SpiritAnimator spiritAnimator;
 
 	private void Awake()
 	{

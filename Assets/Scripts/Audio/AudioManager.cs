@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
 	[SerializeField] private AudioName[] audioNames;
 	[SerializeField] private AudioSource musicComponent, sfxComponent, dialogComponent;
 	[SerializeField] private AudioMixer mixer;
-	[SerializeField] private float waitDelay;
+	// [SerializeField] private float waitDelay;
 
 	private readonly Dictionary<string, AudioClip> audioMap = new();
 
@@ -47,10 +47,11 @@ public class AudioManager : MonoBehaviour
 	public IEnumerator PlayDialog(AudioClip voiceover, float volumeScale = 1)
 	{
 		dialogComponent.PlayOneShot(voiceover, volumeScale);
-		while (dialogComponent.isPlaying)
-		{
-			yield return new WaitForSeconds(waitDelay);
-		}
+		// while (dialogComponent.isPlaying)
+		// {
+		// yield return new WaitForSeconds(waitDelay);
+		// }
+		yield return new WaitWhile(() => dialogComponent.isPlaying);
 	}
 
 	public void AdjustVolume(string groupName, float volume)
@@ -63,6 +64,11 @@ public class AudioManager : MonoBehaviour
 	public float GetVolume(string groupName)
 	{
 		return PlayerPrefs.GetFloat(groupName, 1f);
+	}
+
+	public void StopMusic()
+	{
+		musicComponent.Stop();
 	}
 
 	[System.Serializable] private struct AudioName
