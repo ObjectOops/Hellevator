@@ -40,6 +40,7 @@ public class ReceiptAnimator : MonoBehaviour
 
 	private IEnumerator LinearIn(string text)
 	{
+		// Nesting.
 		textMesh.text = "";
 		foreach (char c in text)
 		{
@@ -54,11 +55,23 @@ public class ReceiptAnimator : MonoBehaviour
 			if (textPrintDelay == 0f)
 			{
 				textMesh.text = text;
+				StartCoroutine(Shrink());
 				break;
 			}
 			yield return new WaitForSeconds(textPrintDelay);
 		}
 		StartCoroutine(GameManager.instance.DecisionTimer());
+	}
+
+	private IEnumerator Shrink()
+	{
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		while (textMesh.isTextOverflowing)
+		{
+			textMesh.fontSize -= overflowFontSizeReduction;
+			yield return null;
+		}
 	}
 
 	public void Trash() // Called by animation event.

@@ -22,7 +22,7 @@ public class PressToStart : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		if (!booted)
+		if (!booted && !UIManager.instance.paused)
 		{
 			AudioManager.instance.StopMusic();
 			backgroundRenderer.enabled = false;
@@ -47,7 +47,7 @@ public class PressToStart : MonoBehaviour
 		cutscene.Play();
 		yield return new WaitForSeconds(1f);
 		float timeout = 0;
-		yield return new WaitWhile(() => cutscene.isPlaying || (timeout += Time.deltaTime) > 40f);
+		yield return new WaitWhile(() => cutscene.isPlaying && (timeout += Time.deltaTime) < 40f);
 		yield return new WaitForSeconds(1f);
 		loading.SetActive(true);
 		SceneManager.instance.Load("Game");
