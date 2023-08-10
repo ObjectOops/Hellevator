@@ -74,18 +74,14 @@ public class GameManager : MonoBehaviour
 		timeRemaining = dayTimers[day - 1] + (boss ? bossTimeExtra : 0);
 		while (!Button.levelSelected)
 		{
-			yield return new WaitForSeconds(1f);
-			if (Button.levelSelected)
-			{
-				yield break;
-			}
-			--timeRemaining;
 			UIManager.instance.SetTimer(timeRemaining);
-			if (timeRemaining == 0)
+			if (timeRemaining <= 0)
 			{
 				StartCoroutine(ReceiptManager.instance.activeReceipt.Judge(1));
 				Button.levelSelected = true;
 			}
+			--timeRemaining;
+			yield return new WaitForSeconds(1f);
 		}
 	}
 

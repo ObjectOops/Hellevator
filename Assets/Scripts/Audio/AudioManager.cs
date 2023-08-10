@@ -51,7 +51,8 @@ public class AudioManager : MonoBehaviour
 		// {
 		// yield return new WaitForSeconds(waitDelay);
 		// }
-		yield return new WaitWhile(() => dialogComponent.isPlaying);
+		float timeout = 0;
+		yield return new WaitWhile(() => dialogComponent.isPlaying || (timeout += Time.deltaTime) > 10f);
 	}
 
 	public void AdjustVolume(string groupName, float volume)

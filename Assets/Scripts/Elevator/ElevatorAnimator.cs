@@ -36,7 +36,8 @@ public class ElevatorAnimator : MonoBehaviour
 		// {
 		// yield return new WaitForSeconds(waitDelay);
 		// }
-		yield return new WaitWhile(() => !opened);
+		float timeout = 0;
+		yield return new WaitWhile(() => !opened || (timeout += Time.deltaTime) > 5f);
 	}
 
 	public IEnumerator Close(int level)
@@ -46,7 +47,8 @@ public class ElevatorAnimator : MonoBehaviour
 		// {
 		// yield return new WaitForSeconds(waitDelay);
 		// }
-		yield return new WaitWhile(() => opened);
+		float timeout = 0;
+		yield return new WaitWhile(() => opened || (timeout += Time.deltaTime) > 5f);
 		floors[level].SetActive(false);
 	}
 

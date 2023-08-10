@@ -18,6 +18,12 @@ public class ReceiptAnimator : MonoBehaviour
 		textMesh = transform.GetComponentInChildren<TextMeshPro>();        
 	}
 
+	// Quickly added skip feature.
+	private void OnMouseDown()
+	{
+		textPrintDelay = 0f;
+	}
+
 	public void Print(string text)
 	{
 		isPrinting = true;
@@ -44,6 +50,11 @@ public class ReceiptAnimator : MonoBehaviour
 				{
 					textMesh.fontSize -= overflowFontSizeReduction;
 				}
+			}
+			if (textPrintDelay == 0f)
+			{
+				textMesh.text = text;
+				break;
 			}
 			yield return new WaitForSeconds(textPrintDelay);
 		}

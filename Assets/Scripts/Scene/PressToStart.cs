@@ -46,7 +46,8 @@ public class PressToStart : MonoBehaviour
 		yield return new WaitForSeconds(1f);
 		cutscene.Play();
 		yield return new WaitForSeconds(1f);
-		yield return new WaitWhile(() => cutscene.isPlaying);
+		float timeout = 0;
+		yield return new WaitWhile(() => cutscene.isPlaying || (timeout += Time.deltaTime) > 40f);
 		yield return new WaitForSeconds(1f);
 		loading.SetActive(true);
 		SceneManager.instance.Load("Game");

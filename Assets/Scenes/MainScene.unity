@@ -10346,7 +10346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8261648629246366253, guid: a39660d649fe0bc49b6064bb8a701d9e, type: 3}
       propertyPath: orthographic size
-      value: 0.916
+      value: 0.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a39660d649fe0bc49b6064bb8a701d9e, type: 3}
@@ -11644,8 +11644,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.05, y: 0.92}
-  m_SizeDelta: {x: 1, y: 0.25}
+  m_AnchoredPosition: {x: 1.125, y: 0.735}
+  m_SizeDelta: {x: 0.7, y: 0.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1517439922
 Animator:
@@ -11722,8 +11722,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
