@@ -99,7 +99,7 @@ $@"{SpiritManager.instance.activeSpirit.realName}
 		}
 
 		int randLevel = Random.Range(lowerBound, upperBound);
-		while (crimeCategories[randLevel].crimes.Length == 0 || 
+		while (LevelUsedUp(randLevel) || 
 			   crimeCategories[randLevel].level == excludeLevel)
 		{
 			randLevel = Random.Range(lowerBound, upperBound);
@@ -112,6 +112,20 @@ $@"{SpiritManager.instance.activeSpirit.realName}
 		}
 		usedCrimes.Add(randCrime);
 		return new KeyValuePair<int, string>(category.level, randCrime);
+	}
+
+	private bool LevelUsedUp(int level)
+	{
+		int count = 0;
+		string[] crimes = crimeCategories[level].crimes;
+		foreach (string crime in crimes)
+		{
+			if (usedCrimes.Contains(crime))
+			{
+				++count;
+			}
+		}
+		return count == crimes.Length;
 	}
 
 	// May need under some circumstances.
@@ -128,6 +142,37 @@ $@"{SpiritManager.instance.activeSpirit.realName}
 		// }
 		// return result;
 	// }
+
+	[ContextMenu("Fuzz Unique Crime Generation")]
+	private void FuzzUniqueCrimeGeneration()
+	{
+		usedCrimes.Clear();
+		int count1 = 12, count2 = 3;
+		for (int i = 0; i < count1; ++i)
+		{
+			KeyValuePair<int, string> minorPair = GetUniqueCrime();
+			int minorLevel = minorPair.Key;
+			string minorCrime = minorPair.Value;
+			Debug.Log($"{minorLevel} {minorCrime}");
+		}
+
+		Debug.Log("BOSS");
+
+		for (int i = 0; i < count2; ++i)
+		{
+			KeyValuePair<int, string> minorPair = GetUniqueCrime();
+			int minorLevel = minorPair.Key;
+			string minorCrime = minorPair.Value;
+
+			KeyValuePair<int, string> majorPair1 = GetUniqueCrime(excludeLevel: minorLevel);
+			int majorLevel = majorPair1.Key;
+			string majorCrime1 = majorPair1.Value;
+			KeyValuePair<int, string> majorPair2 = GetUniqueCrime(forceLevel: majorLevel, excludeCrime: majorCrime1);
+			string majorCrime2 = majorPair2.Value;
+
+			Debug.Log($"{minorLevel} {minorCrime} {majorLevel} {majorCrime1} {majorCrime2}");
+		}
+	}
 
 	[System.Serializable] private struct CrimeCategory
 	{
