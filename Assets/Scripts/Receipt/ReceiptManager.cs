@@ -86,6 +86,12 @@ $@"{SpiritManager.instance.activeSpirit.realName}
 	// There should always be enough crimes.
 	private KeyValuePair<int, string> GetUniqueCrime(int excludeLevel = -1, int forceLevel = -1, string excludeCrime = null)
 	{
+		// Catch rare edge case where all the crimes are used up.
+		if (usedCrimes.Count >= 8 * crimeCategories[0].crimes.Length)
+		{
+			usedCrimes.Clear();
+		}
+
 		if (forceLevel != -1)
 		{
 			CrimeCategory forceCategory = crimeCategories[forceLevel - 1];
