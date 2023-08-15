@@ -87,8 +87,9 @@ $@"{SpiritManager.instance.activeSpirit.realName}
 	private KeyValuePair<int, string> GetUniqueCrime(int excludeLevel = -1, int forceLevel = -1, string excludeCrime = null)
 	{
 		// Catch rare edge case where all the crimes are used up.
-		if (usedCrimes.Count >= 8 * crimeCategories[0].crimes.Length)
+		if (usedCrimes.Count >= 8 * crimeCategories[1].crimes.Length)
 		{
+			// Debug.Log("Limit surpassed. Fallback. Clearing set.");
 			usedCrimes.Clear();
 		}
 
@@ -105,10 +106,18 @@ $@"{SpiritManager.instance.activeSpirit.realName}
 		}
 
 		int randLevel = Random.Range(lowerBound, upperBound);
+		int iterations = 0; // Likewise, catch the exceedingly rare edge case where available crimes are exhaused on the boss fight as the first major level crime is generated while the only level containing available crimes is excluded due to the minor crime.
+		// Note: A better solution would be to ensure that there are always two available levels.
 		while (LevelUsedUp(randLevel) || 
 			   crimeCategories[randLevel].level == excludeLevel)
 		{
 			randLevel = Random.Range(lowerBound, upperBound);
+			if (++iterations > 256)
+			{
+				// Debug.Log("Iterations surpassed.");
+				usedCrimes.Clear();
+				iterations = 0;
+			}
 		}
 		CrimeCategory category = crimeCategories[randLevel];
 		string randCrime = category.crimes[Random.Range(0, category.crimes.Length)];
@@ -152,20 +161,22 @@ $@"{SpiritManager.instance.activeSpirit.realName}
 	[ContextMenu("Fuzz Unique Crime Generation")]
 	private void FuzzUniqueCrimeGeneration()
 	{
-		usedCrimes.Clear();
-		int count1 = 12, count2 = 3;
+		Debug.Log($"Limit: {8 * crimeCategories[1].crimes.Length} assuming each floor has the same number of available crimes, excluding limbo.");
+
+		int count1 = 3, count2 = 4;
+
 		for (int i = 0; i < count1; ++i)
 		{
-			KeyValuePair<int, string> minorPair = GetUniqueCrime();
-			int minorLevel = minorPair.Key;
-			string minorCrime = minorPair.Value;
-			Debug.Log($"{minorLevel} {minorCrime}");
-		}
+			for (int j = 0; j < count2; ++j)
+			{
+				KeyValuePair<int, string> minorPairRegular = GetUniqueCrime();
+				int minorLevelRegular = minorPairRegular.Key;
+				string minorCrimeRegular = minorPairRegular.Value;
+				Debug.Log($"{minorLevelRegular} {minorCrimeRegular}");
+			}
 
-		Debug.Log("BOSS");
+			Debug.Log("BOSS");
 
-		for (int i = 0; i < count2; ++i)
-		{
 			KeyValuePair<int, string> minorPair = GetUniqueCrime();
 			int minorLevel = minorPair.Key;
 			string minorCrime = minorPair.Value;
