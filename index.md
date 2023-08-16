@@ -30,5 +30,3 @@ https://github.com/ObjectOops/Hellevator/assets/92550885/ad7bc4ed-45a3-4dd6-8ed6
 ![Concept art #3.](assets/ca3.png)
 ## Planning
 ![Diagram.](assets/Hellevator%20Process%20Diagram%20Updated.png)
-### Yipee
-![Yipee.](assets/yipee.png)
