@@ -12,7 +12,7 @@ https://github.com/ObjectOops/Hellevator/assets/92550885/e1e02e5e-e7ae-4ca5-bd93
 This game was developed during the NHSGA Original Game Round by ~~Team 10~~ Peculiar Geese Productions, 2023.  
 It received the award *Best Use of TA Resources* for all the TAs involved in voiceover :).  
 Perforce and git were used jointly for development.  
-Please the web page for more information.
+**[Please the web page for more information](https://objectoops.github.io/Hellevator/).**
 
 ## Credits
 Thank you to all involved in the recording of voiceover for our game! Special thanks to my teammates Megan (production, sound design), Ellie (art), Ashley (art), and Tony (programming) for their expertise and dedication!
