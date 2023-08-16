@@ -1,0 +1,807 @@
+fileFormatVersion: 2
+guid: 3b5fb566010261b479e5c40ff30982ce
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5950
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f047a610ee429c4a9017f9d428e50b2
+      internalID: -526768157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_1
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 5950
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab437162ebf84c42b447c112d55fb1a
+      internalID: 397715883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_2
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 5950
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4480f195c6667a458f0519475fb4a17
+      internalID: 2021578557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_3
+      rect:
+        serializedVersion: 2
+        x: 3570
+        y: 5950
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3482b5e74ce9406409d483ed8cffa8b9
+      internalID: 2047544483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_4
+      rect:
+        serializedVersion: 2
+        x: 4760
+        y: 5950
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8bc23b0b471a44fae39091ff044f5a
+      internalID: 619212114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4760
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cabb5698fdd8a6a4fad13015e3034a22
+      internalID: 1094221366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_6
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 4760
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a9fbc65ac66b1488871be1a256877a
+      internalID: 1277911784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_7
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 4760
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74febc5c034fdf24b87a7688d49e2ee9
+      internalID: -468729191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_8
+      rect:
+        serializedVersion: 2
+        x: 3570
+        y: 4760
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7058c75ca3fa159468365cb1210c10f7
+      internalID: 952720637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_9
+      rect:
+        serializedVersion: 2
+        x: 4760
+        y: 4760
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a90db35d9459d64885081bd94008244
+      internalID: -2103336308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3570
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 653a663f82a369645907329996de7c82
+      internalID: 1052800134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_11
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 3570
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb1e7a55c97cd34cb7d719b8d68215c
+      internalID: -900078624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_12
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 3570
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276f0323d18120645bf77261571155f9
+      internalID: -1847186125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_13
+      rect:
+        serializedVersion: 2
+        x: 3570
+        y: 3570
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7939f2c13e7cf443a6f5046d30c5d59
+      internalID: -50595118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_14
+      rect:
+        serializedVersion: 2
+        x: 4760
+        y: 3570
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e996236242ee7f4ea361c4a6bc43e04
+      internalID: -247914230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2380
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d98d05d2d8e98848bcdde09200c71d7
+      internalID: 185571473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_16
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 2380
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21bfc19af7069774bbd75dc297118a13
+      internalID: 629295835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_17
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 2380
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6684f1fb50d51204db841e9d59262a87
+      internalID: 1430360703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_18
+      rect:
+        serializedVersion: 2
+        x: 3570
+        y: 2380
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c0825f710cc664ea8001325afbaf59
+      internalID: 387286470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_19
+      rect:
+        serializedVersion: 2
+        x: 4760
+        y: 2380
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ecb43b43c259746a98eee7a77848bc
+      internalID: -315563220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1190
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4e31ad247103c748b1178ff9f9491d6
+      internalID: -324530124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_21
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 1190
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c626795c1d5b9479bbb56f5a4be322
+      internalID: 562135306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_22
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 1190
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e492d74fb2eebc4da391eb7f4f007f7
+      internalID: 1930976276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_23
+      rect:
+        serializedVersion: 2
+        x: 3570
+        y: 1190
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4f569ba2198d64db30bc9edb6a1e57
+      internalID: 335878848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_24
+      rect:
+        serializedVersion: 2
+        x: 4760
+        y: 1190
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17259724749a8041870a263834b267d
+      internalID: -498939922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1652beff83791942b26f0687a59a520
+      internalID: -127408216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_26
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 0
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbf067414eb6e4499712d9787de0169
+      internalID: -225024434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_27
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 0
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0cf2529a2dea04429693f2e1e8c37fe
+      internalID: -1099772579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_28
+      rect:
+        serializedVersion: 2
+        x: 3570
+        y: 0
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ecf50f9b640ca842b240f35a5700629
+      internalID: 547099744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fortune_Teller_Talk_29
+      rect:
+        serializedVersion: 2
+        x: 4760
+        y: 0
+        width: 1190
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396f7a034750665498089e4cfbe3155d
+      internalID: 385769065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Fortune_Teller_Talk_0: -526768157
+      Fortune_Teller_Talk_1: 397715883
+      Fortune_Teller_Talk_10: 1052800134
+      Fortune_Teller_Talk_11: -900078624
+      Fortune_Teller_Talk_12: -1847186125
+      Fortune_Teller_Talk_13: -50595118
+      Fortune_Teller_Talk_14: -247914230
+      Fortune_Teller_Talk_15: 185571473
+      Fortune_Teller_Talk_16: 629295835
+      Fortune_Teller_Talk_17: 1430360703
+      Fortune_Teller_Talk_18: 387286470
+      Fortune_Teller_Talk_19: -315563220
+      Fortune_Teller_Talk_2: 2021578557
+      Fortune_Teller_Talk_20: -324530124
+      Fortune_Teller_Talk_21: 562135306
+      Fortune_Teller_Talk_22: 1930976276
+      Fortune_Teller_Talk_23: 335878848
+      Fortune_Teller_Talk_24: -498939922
+      Fortune_Teller_Talk_25: -127408216
+      Fortune_Teller_Talk_26: -225024434
+      Fortune_Teller_Talk_27: -1099772579
+      Fortune_Teller_Talk_28: 547099744
+      Fortune_Teller_Talk_29: 385769065
+      Fortune_Teller_Talk_3: 2047544483
+      Fortune_Teller_Talk_4: 619212114
+      Fortune_Teller_Talk_5: 1094221366
+      Fortune_Teller_Talk_6: 1277911784
+      Fortune_Teller_Talk_7: -468729191
+      Fortune_Teller_Talk_8: 952720637
+      Fortune_Teller_Talk_9: -2103336308
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
