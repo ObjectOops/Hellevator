@@ -1,6 +1,6 @@
 ![Peculiar Geese Productions](assets/Goose.png)
 
-# *<p align="center">...presents...</p>*
+<div style="text-align: center"><h1><em>...presents...</em></h1></div>
 
 ![Hellevator](assets/gamelogo.png)
 
@@ -12,7 +12,7 @@ Gain or lose your boss's trust, all while under the pressure of time (as he has 
 
 # Trailer
 
-https://github.com/ObjectOops/Hellevator/assets/92550885/ad7bc4ed-45a3-4dd6-8ed6-99524c61c01e
+<video src="https://raw.githubusercontent.com/ObjectOops/Hellevator/gh-pages/assets/Hellevator_Trailer.mp4" style="max-width: 100%" controls></video>
 
 # Play
 ![Icon.](assets/Icon.png)

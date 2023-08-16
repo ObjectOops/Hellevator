@@ -1,0 +1,7 @@
+markdown: CommonMarkGhPages
+commonmark:
+  options: ["UNSAFE", "SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
+theme: jekyll-theme-midnight
+title: Hellevator
+description: An NHSGA Original Game by Peculiar Geese Productions
