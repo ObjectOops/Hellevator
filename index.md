@@ -16,12 +16,12 @@ Gain or lose your boss's trust, all while under the pressure of time (as he has 
 
 # Play
 ![Icon.](assets/Icon.png)
-| Platform | Instructions |
+| Platform / Latest Download | Instructions |
 | --- | --- |
-| Windows Intel 64-bit | Unzip and run `Hellevator.exe`. |
-| Android ARM64 and ARMv7 | Install the APK. |
-| Web Browser | It's recommended that a native installation be used instead. Use a browser that supports WebAssembly. Once the game loads, click on an empty area of the screen, or the pause button, to wake up the audio player. |
-> GitHub Releases Page
+| [Windows Intel 64-bit](https://github.com/ObjectOops/Hellevator/releases/download/v1.0.0/Hellevator_Windows_Intel64.zip) | Unzip and run `Hellevator.exe`. |
+| [Android ARM64 and ARMv7](https://github.com/ObjectOops/Hellevator/releases/download/v1.0.0/Hellevator_Android.apk) | Install the APK by running it from a file explorer. |
+| [Web Browser (click to play)](./play) | It's recommended that a native installation be used instead. Use a browser that supports WebAssembly. Once the game loads, click on an empty area of the screen, or the pause button, to wake up the audio player. **Afterwards, refresh the tab at least once so the cutscene plays properly** (otherwise it skips itself for some reason). Not supported on mobile. |
+> [GitHub Releases Page (more info)](https://github.com/ObjectOops/Hellevator/releases)
 
 # Gallery
 ## Concept Art
