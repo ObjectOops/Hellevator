@@ -158,14 +158,14 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 0
   m_AspectRatio: 1
-  m_DataSource: 0
+  m_DataSource: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 564892884}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://raw.githubusercontent.com/ObjectOops/Hellevator/57684a5ecc37acc34e6a2253c0f1bd5cd6231eae/Assets/Video/Cutscene.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -1285,6 +1285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   day: {fileID: 0}
   trust: {fileID: 0}
+  timer: {fileID: 0}
   pauseMenu: {fileID: 469525596}
   transitionScreen: {fileID: 0}
   handbookClosed: {fileID: 0}
